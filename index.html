@@ -6,13 +6,24 @@
     <title>Humania Global Systems | Paz Preventiva</title>
     <!-- VINCULACIÓN AL CEREBRO ESTÉTICO -->
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Ajuste de transparencia para la caja de texto corporativa */
+        .hero-card { 
+            background: rgba(255, 255, 255, 0.4) !important; 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 <body id="main-body">
 
     <!-- 0. HEADER MODULAR -->
     <div id="header-placeholder"></div>
 
-    <!-- 1. HERO (LA PROMESA DE THORNE) - PARALLAX -->
+    <!-- 1. HERO (PARALLAX) -->
     <section class="parallax-hero" style="background-image: url('multimedia/hero-humania.jpg');">
         <div class="hero-card">
             <p style="color:var(--cian-humania); font-weight:bold; letter-spacing:2px; font-size:0.7rem;">ESTÁNDAR GLOBAL DE BIENESTAR</p>
@@ -21,7 +32,7 @@
         </div>
     </section>
 
-    <!-- 2. DASHBOARD A.N.I.M.A. (DATOS EN TIEMPO REAL) -->
+    <!-- 2. DASHBOARD A.N.I.M.A. -->
     <div style="background: var(--azul-vance); color: white; padding: 15px; display: flex; justify-content: space-around; font-size: 0.7rem; font-family: monospace; letter-spacing: 1px;">
         <div>LATENCIA: 0.8ms</div>
         <div style="color: var(--cian-humania);">SALUD SINÁPTICA: 100%</div>
@@ -35,55 +46,19 @@
     </div>
     <div class="slider-wrapper" id="wrapper-hitos">
         <div class="slide-track" id="hitos-track">
-            <!-- Hito 1: CNB-1 -->
-            <a href="#" class="slide-item">
-                <img src="multimedia/hito-1.jpg">
-                <div class="label-overlay">
-                    <h3 style="color:white;">Proyecto CNB-1</h3>
-                    <p style="color:#eee; margin-left:0;">El primer paso hacia la libertad motriz absoluta.</p>
-                </div>
-            </a>
-            <!-- Hito 2: CNB-2 -->
-            <a href="#" class="slide-item">
-                <img src="multimedia/hito-2.jpg">
-                <div class="label-overlay">
-                    <h3 style="color:white;">Integración CNB-2</h3>
-                    <p style="color:#eee; margin-left:0;">Unificando sentidos y conciencia en un solo núcleo.</p>
-                </div>
-            </a>
-            <!-- Hito 3: A.N.I.M.A. -->
-            <a href="#" class="slide-item">
-                <img src="multimedia/hito-3.jpg">
-                <div class="label-overlay">
-                    <h3 style="color:white;">Red A.N.I.M.A.</h3>
-                    <p style="color:#eee; margin-left:0;">La conexión global que erradicó la soledad.</p>
-                </div>
-            </a>
+            <a href="#" class="slide-item"><img src="multimedia/hito-1.jpg"><div class="label-overlay"><h3>Proyecto CNB-1</h3><p>Libertad motriz absoluta.</p></div></a>
+            <a href="#" class="slide-item"><img src="multimedia/hito-2.jpg"><div class="label-overlay"><h3>Integración CNB-2</h3><p>Sentidos y conciencia unificados.</p></div></a>
+            <a href="#" class="slide-item"><img src="multimedia/hito-3.jpg"><div class="label-overlay"><h3>Red A.N.I.M.A.</h3><p>La conexión que erradicó la soledad.</p></div></a>
         </div>
         <div class="dots-container" id="hitos-dots"></div>
     </div>
 
     <!-- 4. CICLO DE RECARGA (SOLARIS / VELVET) -->
-    <div class="section-title">
-        <h2>Nutrición de Precisión</h2>
-        <p>Optimizando su ADN para el rendimiento de Nivel 7.</p>
-    </div>
+    <div class="section-title"><h2>Nutrición de Precisión</h2></div>
     <div class="slider-wrapper" id="wrapper-nutri">
         <div class="slide-track" id="nutri-track">
-            <a href="#" class="slide-item">
-                <img src="multimedia/solaris-web.png">
-                <div class="label-overlay">
-                    <h3 style="color:white;">FASE DIURNA: SOLARIS</h3>
-                    <p style="color:#eee; margin-left:0;">Voltaje puro para su jornada operativa.</p>
-                </div>
-            </a>
-            <a href="#" class="slide-item">
-                <img src="multimedia/velvet-web.png">
-                <div class="label-overlay">
-                    <h3 style="color:white;">FASE NOCTURNA: VELVET</h3>
-                    <p style="color:#eee; margin-left:0;">El interruptor definitivo del descanso.</p>
-                </div>
-            </a>
+            <a href="#" class="slide-item"><img src="multimedia/solaris-web.png"><div class="label-overlay"><h3>FASE DIURNA: SOLARIS</h3><p>Voltaje puro para su jornada.</p></div></a>
+            <a href="#" class="slide-item"><img src="multimedia/velvet-web.png"><div class="label-overlay"><h3>FASE NOCTURNA: VELVET</h3><p>El interruptor del descanso.</p></div></a>
         </div>
         <div class="dots-container" id="nutri-dots"></div>
     </div>
@@ -101,47 +76,54 @@
     <!-- 6. FOOTER MODULAR -->
     <div id="footer-placeholder"></div>
 
-    <!-- WIDGET MITE (La vendedora corporativa) -->
+    <!-- SCRIPTS EXTERNOS -->
     <script src="https://humania-nexo.github.io/proiectio/mite.js"></script>
+    <script src="puente.js"></script>
 
     <script>
-        // --- 1. CARGADOR DE COMPONENTES ---
-        async function cargarMódulos() {
-            const h = await fetch('header.html').then(r => r.text());
-            document.getElementById('header-placeholder').innerHTML = h;
-            const f = await fetch('footer.html').then(r => r.text());
-            document.getElementById('footer-placeholder').innerHTML = f;
+        // --- INICIALIZACIÓN DEL SISTEMA CORPORATIVO ---
+        async function iniciarSistema() {
+            try {
+                // Cargar Header y Footer locales
+                const h = await fetch('header.html').then(r => r.text());
+                document.getElementById('header-placeholder').innerHTML = h;
+                const f = await fetch('footer.html').then(r => r.text());
+                document.getElementById('footer-placeholder').innerHTML = f;
+
+                // Activación de la Puerta Secreta (Footer)
+                const matrixTrigger = document.getElementById('matrix-trigger');
+                if (matrixTrigger) {
+                    matrixTrigger.addEventListener('click', e => {
+                        e.preventDefault();
+                        document.body.style.filter = "invert(1) hue-rotate(90deg) contrast(1.5)";
+                        setTimeout(() => { window.location.href = "https://humania-nexo.github.io/proiectio/sincro.html?nodo=login"; }, 2000);
+                    });
+                }
+            } catch (err) { console.error("Error en carga modular", err); }
+
+            // Configurar Sliders
+            setupSlider('wrapper-hitos', 'hitos-track', 'hitos-dots', 3);
+            setupSlider('wrapper-nutri', 'nutri-track', 'nutri-dots', 2);
         }
 
-        // --- 2. MOTOR KINÉTICO UNIVERSAL ---
-        function setupSlider(wrapperId, trackId, dotsId, count) {
-            const wrapper = document.getElementById(wrapperId), track = document.getElementById(trackId), dotsContainer = document.getElementById(dotsId);
-            let index = 0, startX = 0, currentTranslate = 0, prevTranslate = 0, isDragging = false, animationID;
-
+        function setupSlider(wId, tId, dId, count) {
+            const w = document.getElementById(wId), t = document.getElementById(tId), dC = document.getElementById(dId);
+            if (!w || !t) return;
+            let idx = 0, sX = 0, cT = 0, pT = 0, isD = false, aID;
             for(let i=0; i<count; i++) {
-                const dot = document.createElement('div'); dot.className = 'dot' + (i===0?' active':'');
-                dot.onclick = () => { index = i; setPosition(); };
-                dotsContainer.appendChild(dot);
+                const d = document.createElement('div'); d.className = 'dot' + (i===0?' active':'');
+                d.onclick = () => { idx = i; setP(); }; dC.appendChild(d);
             }
-
-            wrapper.addEventListener('touchstart', e => { isDragging = true; startX = e.touches[0].clientX; animationID = requestAnimationFrame(animation); });
-            wrapper.addEventListener('touchmove', e => { if(isDragging) currentTranslate = prevTranslate + e.touches[0].clientX - startX; });
-            wrapper.addEventListener('touchend', () => { isDragging = false; cancelAnimationFrame(animationID); const movedBy = currentTranslate - prevTranslate; if(movedBy < -100 && index < count-1) index++; if(movedBy > 100 && index > 0) index--; setPosition(); });
-            
-            function animation() { track.style.transform = `translateX(${currentTranslate}px)`; if(isDragging) requestAnimationFrame(animation); }
-            function setPosition() { currentTranslate = index * -wrapper.offsetWidth; prevTranslate = currentTranslate; track.style.transform = `translateX(${currentTranslate}px)`; updateDots(); }
-            function updateDots() { dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.className = 'dot' + (i===index?' active':'')); }
-            
-            setInterval(() => { if(!isDragging) { index = (index+1)%count; setPosition(); } }, 6000);
+            w.addEventListener('touchstart', e => { isD = true; sX = e.touches[0].clientX; aID = requestAnimationFrame(anim); });
+            w.addEventListener('touchmove', e => { if(isD) cT = pT + e.touches[0].clientX - sX; });
+            w.addEventListener('touchend', () => { isD = false; cancelAnimationFrame(aID); const m = cT - pT; if(m < -100 && idx < count-1) idx++; if(m > 100 && idx > 0) idx--; setP(); });
+            function anim() { t.style.transform = `translateX(${cT}px)`; if(isD) requestAnimationFrame(anim); }
+            function setP() { cT = idx * -w.offsetWidth; pT = cT; t.style.transform = `translateX(${cT}px)`; dC.querySelectorAll('.dot').forEach((d, i) => d.className = 'dot' + (i===idx?' active':'')); }
+            setInterval(() => { if(!isD) { idx = (idx+1)%count; setP(); } }, 6000);
         }
 
-        window.onload = () => {
-            cargarMódulos();
-            setupSlider('wrapper-hitos', 'hitos-track', 'hitos-dots', 3); // 3 Hitos históricos
-            setupSlider('wrapper-nutri', 'nutri-track', 'nutri-dots', 2);   // Solaris/Velvet
-        };
-        <!-- En index.html de ambos repositorios -->
-        <script src="puente.js"></script>
+        // Ejecutar carga al iniciar
+        iniciarSistema();
     </script>
 </body>
-  </html>
+</html>
