@@ -1,0 +1,78 @@
+/* HUMANIA GLOBAL SYSTEMS - OFFICIAL STYLE GUIDE */
+:root {
+    --azul-vance: #0a2540; /* Azul marino de autoridad */
+    --cian-humania: #00c3ff; 
+    --blanco-clinico: #ffffff;
+    --gris-fondo: #f2f2f7;
+    --texto-primario: #1d1d1f;
+    --texto-secundario: #86868b;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background-color: var(--blanco-clinico); color: var(--texto-primario); overflow-x: hidden; line-height: 1.6; }
+
+/* HEADER CORPORATIVO */
+header { 
+    background: rgba(255,255,255,0.9); 
+    border-bottom: 1px solid #e5e5e5; 
+    padding: 15px 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; top: 0; z-index: 1000; 
+    backdrop-filter: blur(15px);
+}
+.logo-box { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-text { font-weight: bold; letter-spacing: 4px; color: var(--azul-vance); font-size: 1rem; }
+.nav-links { display: none; } /* Se activará en versión desktop */
+
+@media (min-width: 768px) {
+    .nav-links { display: flex; gap: 25px; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; color: var(--texto-secundario); }
+}
+
+/* HERO Y SECCIONES PARALLAX */
+.parallax-hero {
+    height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--azul-vance);
+}
+
+.hero-card {
+    background: rgba(255,255,255,0.7);
+    padding: 40px;
+    border-radius: 2px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* BOTONES DE ACCIÓN */
+.btn-humania {
+    background: var(--azul-vance);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+.btn-humania:hover { background: var(--cian-humania); transform: translateY(-2px); }
+
+/* FOOTER */
+footer {
+    background: #f9f9fb;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 0.75rem;
+    color: var(--texto-secundario);
+}
