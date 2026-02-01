@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Humania Global Systems | Paz Preventiva</title>
+    <!-- VINCULACIÓN AL CEREBRO ESTÉTICO -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body">
+
+    <!-- 0. HEADER MODULAR -->
+    <div id="header-placeholder"></div>
+
+    <!-- 1. HERO (LA PROMESA DE THORNE) - PARALLAX -->
+    <section class="parallax-hero" style="background-image: url('multimedia/hero-humania.jpg');">
+        <div class="hero-card">
+            <p style="color:var(--cian-humania); font-weight:bold; letter-spacing:2px; font-size:0.7rem;">ESTÁNDAR GLOBAL DE BIENESTAR</p>
+            <h1>Evolución Segura.</h1>
+            <p style="color:var(--texto-primario); max-width:500px;">Desde hace 47 años, transformamos el dolor humano en una garantía de paz absoluta.</p>
+        </div>
+    </section>
+
+    <!-- 2. DASHBOARD A.N.I.M.A. (DATOS EN TIEMPO REAL) -->
+    <div style="background: var(--azul-vance); color: white; padding: 15px; display: flex; justify-content: space-around; font-size: 0.7rem; font-family: monospace; letter-spacing: 1px;">
+        <div>LATENCIA: 0.8ms</div>
+        <div style="color: var(--cian-humania);">SALUD SINÁPTICA: 100%</div>
+        <div>RED A.N.I.M.A.: ÓPTIMA</div>
+    </div>
+
+    <!-- 3. EL LEGADO DE LA EVOLUCIÓN (SLIDER DE HITOS) -->
+    <div class="section-title">
+        <h2>Nuestro Legado</h2>
+        <p>Hitos tecnológicos que definieron la nueva era.</p>
+    </div>
+    <div class="slider-wrapper" id="wrapper-hitos">
+        <div class="slide-track" id="hitos-track">
+            <!-- Hito 1: CNB-1 -->
+            <a href="#" class="slide-item">
+                <img src="multimedia/hito-1.jpg">
+                <div class="label-overlay">
+                    <h3 style="color:white;">Proyecto CNB-1</h3>
+                    <p style="color:#eee; margin-left:0;">El primer paso hacia la libertad motriz absoluta.</p>
+                </div>
+            </a>
+            <!-- Hito 2: CNB-2 -->
+            <a href="#" class="slide-item">
+                <img src="multimedia/hito-2.jpg">
+                <div class="label-overlay">
+                    <h3 style="color:white;">Integración CNB-2</h3>
+                    <p style="color:#eee; margin-left:0;">Unificando sentidos y conciencia en un solo núcleo.</p>
+                </div>
+            </a>
+            <!-- Hito 3: A.N.I.M.A. -->
+            <a href="#" class="slide-item">
+                <img src="multimedia/hito-3.jpg">
+                <div class="label-overlay">
+                    <h3 style="color:white;">Red A.N.I.M.A.</h3>
+                    <p style="color:#eee; margin-left:0;">La conexión global que erradicó la soledad.</p>
+                </div>
+            </a>
+        </div>
+        <div class="dots-container" id="hitos-dots"></div>
+    </div>
+
+    <!-- 4. CICLO DE RECARGA (SOLARIS / VELVET) -->
+    <div class="section-title">
+        <h2>Nutrición de Precisión</h2>
+        <p>Optimizando su ADN para el rendimiento de Nivel 7.</p>
+    </div>
+    <div class="slider-wrapper" id="wrapper-nutri">
+        <div class="slide-track" id="nutri-track">
+            <a href="#" class="slide-item">
+                <img src="multimedia/solaris-web.png">
+                <div class="label-overlay">
+                    <h3 style="color:white;">FASE DIURNA: SOLARIS</h3>
+                    <p style="color:#eee; margin-left:0;">Voltaje puro para su jornada operativa.</p>
+                </div>
+            </a>
+            <a href="#" class="slide-item">
+                <img src="multimedia/velvet-web.png">
+                <div class="label-overlay">
+                    <h3 style="color:white;">FASE NOCTURNA: VELVET</h3>
+                    <p style="color:#eee; margin-left:0;">El interruptor definitivo del descanso.</p>
+                </div>
+            </a>
+        </div>
+        <div class="dots-container" id="nutri-dots"></div>
+    </div>
+
+    <!-- 5. SEGURIDAD VANCE -->
+    <section style="padding: 80px 20px; text-align: center; background: var(--gris-fondo);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-weight: 300;">Arquitectura de la Paz</h2>
+            <img src="multimedia/guardia.jpg" style="width:100%; border-radius:20px; margin: 30px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <p style="color: #666; font-size: 1.1rem;">"Estar vigilado es estar a salvo, porque fuera de la red de Humania, nadie vendrá a salvarte."</p>
+            <button class="btn-humania" style="margin-top: 40px;" onclick="window.location.href='https://www.proiect.io'">ÚNETE A LA SINCRONÍA</button>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER MODULAR -->
+    <div id="footer-placeholder"></div>
+
+    <!-- WIDGET MITE (La vendedora corporativa) -->
+    <script src="https://humania-nexo.github.io/proiectio/mite.js"></script>
+
+    <script>
+        // --- 1. CARGADOR DE COMPONENTES ---
+        async function cargarMódulos() {
+            const h = await fetch('header.html').then(r => r.text());
+            document.getElementById('header-placeholder').innerHTML = h;
+            const f = await fetch('footer.html').then(r => r.text());
+            document.getElementById('footer-placeholder').innerHTML = f;
+        }
+
+        // --- 2. MOTOR KINÉTICO UNIVERSAL ---
+        function setupSlider(wrapperId, trackId, dotsId, count) {
+            const wrapper = document.getElementById(wrapperId), track = document.getElementById(trackId), dotsContainer = document.getElementById(dotsId);
+            let index = 0, startX = 0, currentTranslate = 0, prevTranslate = 0, isDragging = false, animationID;
+
+            for(let i=0; i<count; i++) {
+                const dot = document.createElement('div'); dot.className = 'dot' + (i===0?' active':'');
+                dot.onclick = () => { index = i; setPosition(); };
+                dotsContainer.appendChild(dot);
+            }
+
+            wrapper.addEventListener('touchstart', e => { isDragging = true; startX = e.touches[0].clientX; animationID = requestAnimationFrame(animation); });
+            wrapper.addEventListener('touchmove', e => { if(isDragging) currentTranslate = prevTranslate + e.touches[0].clientX - startX; });
+            wrapper.addEventListener('touchend', () => { isDragging = false; cancelAnimationFrame(animationID); const movedBy = currentTranslate - prevTranslate; if(movedBy < -100 && index < count-1) index++; if(movedBy > 100 && index > 0) index--; setPosition(); });
+            
+            function animation() { track.style.transform = `translateX(${currentTranslate}px)`; if(isDragging) requestAnimationFrame(animation); }
+            function setPosition() { currentTranslate = index * -wrapper.offsetWidth; prevTranslate = currentTranslate; track.style.transform = `translateX(${currentTranslate}px)`; updateDots(); }
+            function updateDots() { dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.className = 'dot' + (i===index?' active':'')); }
+            
+            setInterval(() => { if(!isDragging) { index = (index+1)%count; setPosition(); } }, 6000);
+        }
+
+        window.onload = () => {
+            cargarMódulos();
+            setupSlider('wrapper-hitos', 'hitos-track', 'hitos-dots', 3); // 3 Hitos históricos
+            setupSlider('wrapper-nutri', 'nutri-track', 'nutri-dots', 2);   // Solaris/Velvet
+        };
+    </script>
+</body>
+  </html>
