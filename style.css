@@ -76,3 +76,78 @@ footer {
     font-size: 0.75rem;
     color: var(--texto-secundario);
 }
+/* --- BLOQUE DE SLIDERS KINÉTICOS (HUMANIA CORE) --- */
+.slider-wrapper { 
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 40px auto; 
+    overflow: hidden; 
+    position: relative; 
+    cursor: grab; 
+}
+
+.slide-track { 
+    display: flex; 
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+    will-change: transform; 
+}
+
+.slide-item { 
+    min-width: 100%; 
+    position: relative; 
+    display: block; 
+}
+
+/* Control de imágenes: Evita el desborde y el estiramiento */
+.slide-item img { 
+    width: 100%; 
+    height: 50vh; /* Altura controlada en móvil */
+    display: block; 
+    object-fit: cover; 
+    object-position: center;
+    -webkit-user-drag: none; 
+}
+
+@media (min-width: 768px) {
+    .slide-item img { height: 60vh; } /* Más altura en pantallas grandes */
+}
+
+/* Overlay de texto alineado a la derecha (Protocolo Proiectio) */
+.label-overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    /* Degradado usando el azul de Humania */
+    background: linear-gradient(to top, rgba(10, 37, 64, 0.9) 0%, rgba(10, 37, 64, 0.4) 60%, transparent 100%); 
+    color: #fff; 
+    padding: 60px 20px 25px; 
+    text-align: right; 
+    pointer-events: none; 
+}
+
+.label-overlay h3 { color: var(--cian-humania); font-size: 1.4rem; margin-bottom: 3px; }
+.label-overlay p { font-size: 0.85rem; opacity: 0.9; margin-left: auto; max-width: 80%; }
+
+/* Puntos de navegación */
+.dots-container { 
+    position: absolute; 
+    bottom: 10px; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    gap: 8px; 
+    z-index: 10; 
+}
+.dot { 
+    width: 6px; 
+    height: 6px; 
+    border-radius: 50%; 
+    background: rgba(255,255,255,0.4); 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.dot.active { 
+    background: var(--cian-humania); 
+    transform: scale(1.4); 
+    }
