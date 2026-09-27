@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo de Privacidad Neuronal & Datos — HUMANIA GLOBAL SYSTEMS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        .privacy-page {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px 30px;
+            background: #ffffff;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            box-shadow: 0 10px 30px rgba(8, 28, 46, 0.05);
+        }
+        .privacy-title {
+            color: var(--azul-vance);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .privacy-subtitle {
+            color: var(--oro-imperial);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .privacy-block {
+            margin-bottom: 25px;
+        }
+        .privacy-block h3 {
+            color: var(--azul-vance);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--gris-marmol);
+            padding-bottom: 4px;
+        }
+        .privacy-block p, .privacy-block li {
+            color: var(--texto-secundario);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .privacy-block ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+        .btn-return {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: var(--azul-vance);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .btn-return:hover {
+            color: var(--oro-imperial);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-box">
+            <img src="multimedia/humania-logo.png" alt="Humania" style="height: 28px;">
+            <span class="logo-text">HUMANIA</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#submundos">Submundos</a>
+            <a href="privacidad.html" style="color: var(--oro-imperial);">Privacidad</a>
+        </div>
+    </header>
+
+    <main class="privacy-page">
+        <a href="index.html" class="btn-return">← Volver al Portal Institucional</a>
+        
+        <h1 class="privacy-title">Protocolo de Privacidad Neuronal & Protección de Datos</h1>
+        <div class="privacy-subtitle">Directiva Global de Soberanía Digital // Voluntas Pro Pace</div>
+
+        <section class="privacy-block">
+            <h3>1. Declaración de Principios y Protección del Ciudadano</h3>
+            <p>En el marco de la arquitectura institucional de <strong>Humania Global Systems</strong>, la preservación de la privacidad, el respeto al libre albedrío y la custodia ética de los entornos digitales constituyen mandatos prioritarios.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h3>2. Ausencia de Rastreadores Publicitarios y Cookies de Terceros</h3>
+            <p>Este portal opera bajo una política estricta de <strong>Cero Rastreo Comercial</strong>. No se incorporan cookies de remarketing, píxeles de publicidad de terceros ni herramientas de telemetría invasiva para comercializar información ciudadana.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h3>3. Almacenamiento Técnico Exclusivo en Cliente (Local Storage)</h3>
+            <p>La plataforma utiliza únicamente almacenamiento técnico esencial en el navegador del dispositivo (<code>localStorage</code> / <code>sessionStorage</code>) para garantizar el funcionamiento continuo de los servicios:</p>
+            <ul>
+                <li>Gestión de estados de visualización y transiciones transmedia.</li>
+                <li>Preservación de configuraciones de navegación seleccionadas por el usuario.</li>
+                <li>Resguardo de parámetros de sesión técnica de forma estrictamente local.</li>
+            </ul>
+            <p style="margin-top: 8px;">Dichos registros permanecen alojados de forma local e intransferible en el cliente.</p>
+        </section>
+
+        <section class="privacy-block">
+            <h3>4. Integridad de Transmisión & Cifrado Perimetral</h3>
+            <p>Toda comunicación hacia este dominio se encuentra cifrada bajo protocolos <strong>TLS 1.3 / HTTPS</strong> con certificación SSL de 256 bits e inmunización perimetral contra anomalías a través de la infraestructura Anycast de Cloudflare Enterprise.</p>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('footer.html')
+            .then(r => r.text())
+            .then(f => document.getElementById('footer-placeholder').innerHTML = f)
+            .catch(() => {});
+    </script>
+</body>
+</html>
