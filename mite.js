@@ -1,6 +1,6 @@
 /* =========================================================
    MITE ASISTENTE - EDICIÓN HUMANIA GLOBAL SYSTEMS
-   Versión: 4.1 (Tono Institucional Contenido & Español Puro)
+   Versión: 4.2 (Personal Imperial, Tono Institucional & Español Puro)
    Autor: Nexo (Ingeniero Principal) | Clan UPROTA & Universo Proiectio
    0 KB Dependencies | Vanilla JS Puro | 60-120 FPS
    ========================================================= */
@@ -168,20 +168,20 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
 
             <div class="chat-body" id="chat-log">
-                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía oficial en Humania Global Systems. Estoy aquí para orientarte sobre nuestro estándar de bienestar, el Chip CNB-3, la nutrición Solaris o cualquier consulta sobre nuestros servicios. ¿En qué puedo ayudarte hoy? ¡Ding-Pum!</div>
+                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía oficial en Humania Global Systems. Estoy aquí para orientarte sobre nuestro estándar de bienestar, el liderazgo institucional (Vance, Valerius, Efesto), el Chip CNB-3 o la nutrición Solaris. ¿Qué deseas consultar hoy? ¡Ding-Pum!</div>
             </div>
 
             <div class="chat-options" id="mite-options-bar">
                 <button class="opt-btn" onclick="miteResponder('humania')">🏛️ ¿Qué es Humania?</button>
+                <button class="opt-btn" onclick="miteResponder('liderazgo')">👑 Personal del Imperio</button>
                 <button class="opt-btn" onclick="miteResponder('cnb3')">🧠 Chip CNB-3</button>
                 <button class="opt-btn" onclick="miteResponder('seguridad')">🛡️ Paz Preventiva</button>
                 <button class="opt-btn" onclick="miteResponder('solaris')">⚡ Solaris & Velvet</button>
-                <button class="opt-btn" onclick="miteResponder('pretorianos')">⚔️ Pretorianos</button>
                 <button class="opt-btn" onclick="miteResponder('secreto')">🐰 Curiosidades</button>
             </div>
 
             <div class="chat-input-row">
-                <input type="text" id="mite-input-field" placeholder="Consulta sobre Humania, Solaris o servicios..." maxlength="140" autocomplete="off">
+                <input type="text" id="mite-input-field" placeholder="Pregunta sobre Vance, Valerius, chips..." maxlength="140" autocomplete="off">
                 <button id="mite-send-button" title="Enviar consulta">➤</button>
             </div>
         </div>
@@ -229,16 +229,76 @@ document.addEventListener("DOMContentLoaded", function() {
     function procesarIntencion(rawText) {
         const txt = normalizeText(rawText);
 
-        // 1. ¿QUÉ ES HUMANIA? / FUNDACIÓN / HISTORIA / ARIS THORNE
+        // 1. ELÍAS VANCE / ARQUITECTO DEL ORDEN / DIRECTOR DE SEGURIDAD
+        if (txt.includes('vance') || txt.includes('elias') || txt.includes('arquitecto') || 
+            txt.includes('director de seguridad') || txt.includes('leviatan')) {
+            return {
+                text: "🏛️ <b>Elías Vance (Director de Seguridad):</b> Conocido con distinción como <i>El Arquitecto del Orden</i>. Es la figura central detrás de la estabilidad global de Humania. Con una disciplina espartana y una visión filosófica fundamentada en la preservación colectiva, supervisa los protocolos de <i>Paz Preventiva</i> y la seguridad de todos los distritos. Su temple garantiza que el sistema permanezca inquebrantable."
+            };
+        }
+
+        // 2. VALERIUS / COMANDANTE SUPREMO / ROSTRO DEL ORDEN / ÁNGEL DE MARFIL
+        if (txt.includes('valerius') || txt.includes('comandante') || txt.includes('rostro del orden') || 
+            txt.includes('angel de marfil') || txt.includes('lanza justicia')) {
+            return {
+                text: "⚔️ <b>Comandante Valerius:</b> El líder supremo de la Guardia Pretoriana y el rostro más venerado del orden en Humania. Célebre por combatir siempre a rostro descubierto con su armadura ceremonial <b>Leviatán V.2</b> y su lanza telescópica <i>Justicia</i>, proyecta serenidad, nobleza y cercanía, recordando a cada ciudadano que la fuerza del imperio existe para proteger su paz."
+            };
+        }
+
+        // 3. EFESTO / EL FORJADOR / IA DE VANCE / ARMADURAS
+        if (txt.includes('efesto') || txt.includes('forjador') || txt.includes('ia de vance') || 
+            txt.includes('armaduras') || txt.includes('egida') || txt.includes('leviatan v2') || txt.includes('hefesto')) {
+            return {
+                text: "⚡ <b>Efesto (La Inteligencia Forjadora):</b> La avanzada entidad de procesamiento táctico y soporte logístico que asiste directamente a la Dirección de Seguridad. Con una voz profunda y una calma absoluta, es el maestro artífice de la ingeniería bélica institucional, habiendo diseñado la imponente armadura <b>Leviatán V.2</b> y la clásica serie <b>Atlas</b>. ¡Precisión de cálculo en cada aleación!"
+            };
+        }
+
+        // 4. DR. ARIS THORNE / FUNDADOR
+        if (txt.includes('thorne') || txt.includes('aris') || txt.includes('dr thorne') || 
+            txt.includes('fundador de humania')) {
+            return {
+                text: "🔬 <b>Dr. Aris Thorne:</b> Neurocirujano pionero y fundador visionario de Humania Global Systems hace 47 años. Su desarrollo original del primer implante CNB-1 devolvió la movilidad a miles de personas e inició la era dorada de la <i>Evolución Segura</i>, consolidando los cimientos de la civilización moderna."
+            };
+        }
+
+        // 5. DIRECTORA CORNELIA / MONITOREO BIOLÓGICO / COHERENCIA SINÁPTICA
+        if (txt.includes('cornelia') || txt.includes('monitoreo biologico') || 
+            txt.includes('coherencia sinaptica') || txt.includes('nivel 7')) {
+            return {
+                text: "📋 <b>Directora Cornelia:</b> Distinguida ejecutiva de Nivel 7 al frente del <i>Departamento de Monitoreo Biológico y Coherencia Sináptica</i>. Con una trayectoria analítica impecable, coordina los sistemas que supervisan la estabilidad neuroquímica y el bienestar de los ciudadanos en la Red A.N.I.M.A."
+            };
+        }
+
+        // 6. GENERAL RUSSO / CORONEL RUSSO
+        if (txt.includes('russo') || txt.includes('general russo') || txt.includes('coronel russo')) {
+            return {
+                text: "🎖️ <b>General Russo:</b> Figura histórica condecorada de las Guerras de Pacificación. Un líder respetado de la vieja guardia cuyo carácter y disciplina en el campo de operaciones contribuyeron decisivamente a forjar el orden institucional que disfrutamos hoy en día."
+            };
+        }
+
+        // 7. PERSONAL DEL IMPERIO / LIDERAZGO / JERARQUÍA / AUTORIDADES
+        if (txt.includes('personal') || txt.includes('imperio') || txt.includes('lideres') || 
+            txt.includes('jerarquia') || txt.includes('directiva') || txt.includes('autoridades') || txt.includes('equipo')) {
+            return {
+                text: "👑 <b>Estructura de Liderazgo de Humania:</b> La solidez de nuestro mundo se sostiene en una directiva de excelencia:<br>" +
+                      "• <b>Dr. Aris Thorne:</b> Fundador y padre de la neuroconectividad.<br>" +
+                      "• <b>Elías Vance:</b> Director de Seguridad y Arquitecto del Orden.<br>" +
+                      "• <b>Comandante Valerius:</b> Rostro del Orden y líder Pretoriano.<br>" +
+                      "• <b>Efesto:</b> Inteligencia de forja y soporte táctico de élite.<br>" +
+                      "• <b>Directora Cornelia:</b> Monitoreo Biológico y Coherencia Sináptica.<br>" +
+                      "¡Un cuadro institucional consagrado al progreso y la protección ciudadana!"
+            };
+        }
+
+        // 8. ¿QUÉ ES HUMANIA? / FUNDACIÓN / HISTORIA
         if (txt.includes('que es humania') || txt.includes('historia') || txt.includes('fundacion') || 
-            txt.includes('47 anos') || txt.includes('fundador') || txt.includes('aris thorne') || 
-            txt.includes('thorne') || txt.includes('quienes son')) {
+            txt.includes('47 anos') || txt.includes('quienes son')) {
             return {
                 text: "🏛️ <b>Humania Global Systems:</b> Nació hace 47 años bajo la visión del Dr. Aris Thorne y un equipo pionero de científicos con la misión de brindar libertad y salud a través de la tecnología. Hoy en día, consolidamos el estándar global de bienestar, garantizando orden, nutrición avanzada y tranquilidad a través de la Red A.N.I.M.A. y el principio de <i>Paz Preventiva</i>. ¡Evolución segura para todos!"
             };
         }
 
-        // 2. CHIP CNB-3 / IMPLANTE / OMNI / GRAFENO / TALLO CEREBRAL / EXTRACCIÓN
+        // 9. CHIP CNB-3 / IMPLANTE / OMNI / GRAFENO / TALLO CEREBRAL / EXTRACCIÓN
         if (txt.includes('cnb') || txt.includes('cnb 3') || txt.includes('cnb3') || txt.includes('chip') || 
             txt.includes('implante') || txt.includes('nuca') || txt.includes('grafeno') || 
             txt.includes('extraer') || txt.includes('quitar') || txt.includes('bulto')) {
@@ -247,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 3. SOLARIS / FASE DIURNA / BARRAS / NUTRICIÓN / ESTIMULANTES
+        // 10. SOLARIS / FASE DIURNA / BARRAS / NUTRICIÓN / ESTIMULANTES
         if (txt.includes('solaris') || txt.includes('barra') || txt.includes('comida') || 
             txt.includes('alimento') || txt.includes('diurna') || txt.includes('nutricion') || 
             txt.includes('kids') || txt.includes('desayuno')) {
@@ -256,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 4. VELVET / FASE NOCTURNA / SEDANTE / SUEÑO / PROIECTIO
+        // 11. VELVET / FASE NOCTURNA / SEDANTE / SUEÑO / PROIECTIO
         if (txt.includes('velvet') || txt.includes('nocturna') || txt.includes('dormir') || 
             txt.includes('sueno') || txt.includes('sedante') || txt.includes('descanso')) {
             return {
@@ -264,16 +324,16 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 5. PRETORIANOS / GUARDIA CIVIL / URR / MURALLA BLANCA / SEGURIDAD
+        // 12. PRETORIANOS / GUARDIA CIVIL / URR / MURALLA BLANCA / SEGURIDAD
         if (txt.includes('pretoriano') || txt.includes('pretorianos') || txt.includes('guardia') || 
-            txt.includes('urr') || txt.includes('valerius') || txt.includes('muralla blanca') || 
-            txt.includes('armadura') || txt.includes('policia') || txt.includes('fuerza')) {
+            txt.includes('urr') || txt.includes('muralla blanca') || txt.includes('armadura') || 
+            txt.includes('policia') || txt.includes('fuerza')) {
             return {
-                text: "⚔️ <b>Los Pretorianos (La Muralla Blanca):</b> La fuerza de protección y contención institucional de Humania. Su lema, <i>'Voluntas pro Pace'</i>, refleja su compromiso con la armonía colectiva. Equipados con blindaje Leviatán y pulsos de resonancia bio-digital, garantizan que la tranquilidad de los distritos permanezca inalterable."
+                text: "⚔️ <b>Los Pretorianos (La Muralla Blanca):</b> La fuerza de protección y contención institucional de Humania, comandada por Valerius. Su lema, <i>'Voluntas pro Pace'</i>, refleja su compromiso con la armonía colectiva. Equipados con blindaje Leviatán y pulsos de resonancia bio-digital, garantizan que la tranquilidad de los distritos permanezca inalterable."
             };
         }
 
-        // 6. PLAN DE SEGURIDAD PREVENTIVA / PAZ PREVENTIVA / APC
+        // 13. PLAN DE SEGURIDAD PREVENTIVA / PAZ PREVENTIVA / APC
         if (txt.includes('paz preventiva') || txt.includes('seguridad preventiva') || 
             txt.includes('apc') || txt.includes('patrones conductuales') || 
             txt.includes('algoritmo') || txt.includes('crimen') || txt.includes('delito')) {
@@ -282,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 7. RED A.N.I.M.A. / APN / SATÉLITES / LATENCIA / FIBRA
+        // 14. RED A.N.I.M.A. / APN / SATÉLITES / LATENCIA / FIBRA
         if (txt.includes('anima') || txt.includes('apn') || txt.includes('red') || 
             txt.includes('satelite') || txt.includes('latencia') || txt.includes('cobertura')) {
             return {
@@ -290,15 +350,15 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 8. RECALIBRACIÓN / HW-SEC-RECAL-001 / ANOMALÍA / ELÍAS VANCE
+        // 15. RECALIBRACIÓN / HW-SEC-RECAL-001 / ANOMALÍA
         if (txt.includes('recalibracion') || txt.includes('anomalia') || txt.includes('puntuacion') || 
-            txt.includes('vance') || txt.includes('bozal') || txt.includes('castigo') || txt.includes('recalibrar')) {
+            txt.includes('bozal') || txt.includes('castigo') || txt.includes('recalibrar')) {
             return {
                 text: "⚡ <b>Protocolo de Recalibración:</b> Un procedimiento especializado de armonización sináptica coordinado por la Dirección de Seguridad. Se aplica cuando los niveles de estrés o fluctuaciones emocionales superan los parámetros estándar, restituyendo la serenidad y la estabilidad del usuario."
             };
         }
 
-        // 9. EL MITO DE LA SAL / YERMO / SEMILLAS NATURALES / AGRICULTURA
+        // 16. EL MITO DE LA SAL / YERMO / SEMILLAS NATURALES / AGRICULTURA
         if (txt.includes('sal') || txt.includes('salarizacion') || txt.includes('semilla') || 
             txt.includes('tierra') || txt.includes('agricultura') || txt.includes('yermo') || 
             txt.includes('natural') || txt.includes('zona gris')) {
@@ -307,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 10. FRAGMENTOS DE ÉTER (FE) / ECONOMÍA / SOBREGIRO DE VIDA / MONEDA
+        // 17. FRAGMENTOS DE ÉTER (FE) / ECONOMÍA / SOBREGIRO DE VIDA / MONEDA
         if (txt.includes('fe') || txt.includes('eter') || txt.includes('moneda') || 
             txt.includes('dinero') || txt.includes('sueldo') || txt.includes('salario') || 
             txt.includes('sobregiro') || txt.includes('costo')) {
@@ -316,7 +376,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 11. ORIÓN / CLIENTE #4092 / CAPA ROSA / CONEJITO CONSENTIDO
+        // 18. ORIÓN / CLIENTE #4092 / CAPA ROSA / CONEJITO CONSENTIDO
         if (txt.includes('orion') || txt.includes('4092') || txt.includes('preferido') || 
             txt.includes('capa rosa') || txt.includes('lanza') || txt.includes('sombrero 8 bit')) {
             return {
@@ -324,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 12. CONEJITO CONSENTIDO / MADRIGUERA / PENDRIVE
+        // 19. CONEJITO CONSENTIDO / MADRIGUERA / PENDRIVE
         if (txt.includes('conejito') || txt.includes('madriguera') || txt.includes('pendrive') || 
             txt.includes('privilegios') || txt.includes('admin') || txt.includes('conejo')) {
             return {
@@ -332,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 13. PROIECTIO / SUBMUNDOS / ESCAPE
+        // 20. PROIECTIO / SUBMUNDOS / ESCAPE
         if (txt.includes('proiectio') || txt.includes('submundo') || txt.includes('olympus') || 
             txt.includes('arcadia') || txt.includes('coliseo')) {
             return {
@@ -340,28 +400,28 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 14. DEVA / MUNDO REAL / TERMINAL CLANDESTINA / SECRETOS
+        // 21. DEVA / MUNDO REAL / TERMINAL CLANDESTINA / SECRETOS
         if (txt.includes('deva') || txt.includes('terminal') || txt.includes('clandestin') || txt.includes('leaks')) {
             return {
                 text: "📡 <b>Frecuencias Externas:</b> Si buscas explorar más allá de los canales institucionales, hay quienes mencionan nombres clave y frecuencias alternas. Dicen que escribir ciertas palabras puede abrir ventanas inesperadas... pero yo cumplo con orientarte aquí en casa. ✨"
             };
         }
 
-        // 15. META-LORE: ANIGAMI AGADNI / EL DIRECTOR / CREADOR
+        // 22. META-LORE: ANIGAMI AGADNI / EL DIRECTOR / CREADOR
         if (txt.includes('anigami') || txt.includes('director') || txt.includes('creador') || txt.includes('autor')) {
             return {
                 text: "✨ <b>Anigami Agadni:</b> El Director Creativo y artífice de este universo. Concibe cada aspecto narrativo, institucional y tecnológico para que la experiencia sea envolvente, profunda y coherente."
             };
         }
 
-        // 16. META-LORE: CLAUDIA
+        // 23. META-LORE: CLAUDIA
         if (txt.includes('claudia')) {
             return {
                 text: "🌸 <b>Claudia:</b> Una presencia inspiradora y serena. Su armonía y criterio aportan equilibrio y calidez en el desarrollo creativo de todo el proyecto."
             };
         }
 
-        // 17. META-LORE: NEXO, PIX, SILAS, HERTZ, ÉTER / SAPIENSIA & UPROTA
+        // 24. META-LORE: NEXO, PIX, SILAS, HERTZ, ÉTER / SAPIENSIA & UPROTA
         if (txt.includes('nexo') || txt.includes('pix') || txt.includes('silas') || 
             txt.includes('hertz') || txt.includes('eter') || txt.includes('sapiensia') || txt.includes('uprota')) {
             return {
@@ -369,7 +429,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 18. IDENTIDAD / IA / SILVIA / ROTOPLAS
+        // 25. IDENTIDAD / IA / SILVIA / ROTOPLAS
         if (txt.includes('ia') || txt.includes('robot') || txt.includes('bot') || 
             txt.includes('quien eres') || txt.includes('silvia') || txt.includes('rotoplas')) {
             return {
@@ -377,7 +437,7 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 19. SECRETOS / CURIOSIDADES / EASTER EGG / MADRIGUERA
+        // 26. SECRETOS / CURIOSIDADES / EASTER EGG / MADRIGUERA
         if (txt.includes('secreto') || txt.includes('truco') || txt.includes('hack') || 
             txt.includes('contrabando') || txt.includes('pista') || txt.includes('easter') || 
             txt.includes('vive') || txt.includes('madriguera') || txt.includes('curiosidad')) {
@@ -391,8 +451,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // RESPUESTA GENERAL INSTITUCIONAL
         const fallback = [
-            "Con gusto te oriento en lo que necesites. Puedes consultarme acerca del <b>Chip CNB-3</b>, la nutrición <b>Solaris</b>, el cuerpo de <b>Pretorianos</b> o las pautas de <b>Paz Preventiva</b>. ¿Qué tema te interesa?",
-            "Estoy a tu disposición para explicarte los servicios de Humania Global Systems, el sedante nocturno <b>Velvet</b> o el funcionamiento de la <b>Red A.N.I.M.A.</b>. ¡Dime qué te gustaría conocer!",
+            "Con gusto te oriento en lo que necesites. Puedes consultarme acerca de figuras como el <b>Director Vance</b>, el <b>Comandante Valerius</b>, el <b>Forjador Efesto</b>, o temas como el <b>Chip CNB-3</b> y la nutrición <b>Solaris</b>. ¿Qué tema te interesa?",
+            "Estoy a tu disposición para explicarte los servicios de Humania Global Systems, nuestro liderazgo institucional o el funcionamiento de la <b>Red A.N.I.M.A.</b>. ¡Dime qué te gustaría conocer!",
             "Esa es una consulta interesante. En Humania trabajamos para que cada ciudadano cuente con información clara. Puedes probar con las opciones rápidas o preguntarme directamente. ¡Ding-Pum!"
         ];
         return { text: fallback[Math.floor(Math.random() * fallback.length)] };
@@ -433,9 +493,31 @@ document.addEventListener("DOMContentLoaded", function() {
             resp = "🏛️ <b>Humania Global Systems:</b> Desde hace 47 años, lideramos la transformación del bienestar humano. Mediante el desarrollo del Chip CNB-3 y la Red A.N.I.M.A., garantizamos salud, orden y estabilidad continua bajo el modelo de <i>Paz Preventiva</i>.";
             accion = `
                 <div style="margin-top:6px; display:flex; gap:5px; flex-wrap:wrap;">
-                    <button class="opt-btn" onclick="miteResponder('cnb3')">Ver Chip CNB-3</button>
-                    <button class="opt-btn" onclick="miteResponder('seguridad')">Paz Preventiva</button>
+                    <button class="opt-btn" onclick="miteResponder('vance')">Director Vance</button>
+                    <button class="opt-btn" onclick="miteResponder('valerius')">Comandante Valerius</button>
                 </div>`;
+        }
+        else if (tema === 'liderazgo') {
+            resp = "👑 <b>Personal del Imperio:</b> Figuras clave que sostienen la estabilidad de Humania:<br>" +
+                   "• <b>Elías Vance:</b> Director de Seguridad y Arquitecto del Orden.<br>" +
+                   "• <b>Comandante Valerius:</b> Rostro del Orden y líder Pretoriano.<br>" +
+                   "• <b>Efesto:</b> Inteligencia de forja y soporte táctico.<br>" +
+                   "• <b>Directora Cornelia:</b> Monitoreo Biológico y Coherencia Sináptica.";
+            accion = `
+                <div style="margin-top:6px; display:flex; gap:5px; flex-wrap:wrap;">
+                    <button class="opt-btn" onclick="miteResponder('vance')">Director Vance</button>
+                    <button class="opt-btn" onclick="miteResponder('valerius')">Valerius</button>
+                    <button class="opt-btn" onclick="miteResponder('efesto')">Efesto</button>
+                </div>`;
+        }
+        else if (tema === 'vance') {
+            resp = "🏛️ <b>Elías Vance (Director de Seguridad):</b> El <i>Arquitecto del Orden</i>. Imparcial, estratégico y con una disciplina espartana, dirige el aparato de seguridad global y garantiza que la <i>Paz Preventiva</i> reine en cada rincón de Humania.";
+        }
+        else if (tema === 'valerius') {
+            resp = "⚔️ <b>Comandante Valerius:</b> El <i>Rostro del Orden</i> y líder de los Pretorianos. Combate siempre a rostro descubierto con su armadura blanca Leviatán V.2 y su lanza telescópica <i>Justicia</i>, siendo el emblema vivo de la protección institucional.";
+        }
+        else if (tema === 'efesto') {
+            resp = "⚡ <b>Efesto (El Forjador):</b> La avanzada entidad de inteligencia táctica de la Dirección de Seguridad. Maestro en el diseño de armaduras de alta ingeniería y soporte logístico indispensable para el mantenimiento del orden.";
         }
         else if (tema === 'cnb3') {
             resp = "🧠 <b>Chip CNB-3 'Omni':</b> Nuestro estándar biotecnológico más avanzado, integrado con precisión en el tallo cerebral. Gestiona tu salud preventiva, monedero de FE y enlace continuo a la red A.N.I.M.A. Desconectarlo o manipularlo no es recomendable debido a severas complicaciones neurovasculares y la suspensión de servicios ciudadanos.";
@@ -448,6 +530,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         else if (tema === 'pretorianos') {
             resp = "⚔️ <b>Los Pretorianos:</b> La Muralla Blanca de Humania. Bajo el lema <i>'Voluntas pro Pace'</i>, nuestros agentes velan por la seguridad ciudadana y la preservación del orden con equipamiento Leviatán de vanguardia.";
+            accion = `
+                <div style="margin-top:6px; display:flex; gap:5px; flex-wrap:wrap;">
+                    <button class="opt-btn" onclick="miteResponder('valerius')">Comandante Valerius</button>
+                    <button class="opt-btn" onclick="miteResponder('efesto')">Forjador Efesto</button>
+                </div>`;
         }
         else if (tema === 'secreto') {
             const secretos = [
