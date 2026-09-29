@@ -6,12 +6,11 @@
     <title>Humania Global Systems | Paz Preventiva</title>
     <!-- FAVICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- VINCULACIÓN AL CEREBRO ESTÉTICO -->
     <link rel="canonical" href="https://www.humania.space/" />
-    <meta name="description" content="Humania Global Systems — Paz Preventiva. Estandar global de bienestar, red A.N.I.M.A. y plataforma de resistencia del universo transmedia Proiectio.">
-    <meta name="keywords" content="humania, humania space, paz preventiva, red anima, elias vance, marta, universo proiectio, sapiensia clan">
+    <meta name="description" content="Humania Global Systems — Paz Preventiva. Estándar global de bienestar, red A.N.I.M.A. y plataforma de resistencia del universo transmedia Proiectio.">
+    <meta name="keywords" content="humania, humania space, paz preventiva, red anima, elias vance, marta, cnb, solaris, velvet, pretorianos, universo proiectio, sapiensia clan">
     <meta name="author" content="Anigami Agadni y SAPIENSIA Clan">
     <meta name="robots" content="index, follow">
 
@@ -20,14 +19,14 @@
     <meta property="og:url" content="https://www.humania.space/">
     <meta property="og:site_name" content="HUMANIA">
     <meta property="og:title" content="Humania Global Systems | Paz Preventiva">
-    <meta property="og:description" content="Evolucion Segura. Desde hace 47 anos, transformamos el dolor humano en una garantia de paz absoluta.">
+    <meta property="og:description" content="Evolución Segura. Desde hace 47 años, transformamos el dolor humano en una garantía de paz absoluta.">
     <meta property="og:image" content="https://www.humania.space/multimedia/humania-logo.png">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.humania.space/">
     <meta name="twitter:title" content="Humania Global Systems | Paz Preventiva">
-    <meta name="twitter:description" content="Estandar global de bienestar y plataforma de resistencia del universo Proiectio.">
+    <meta name="twitter:description" content="Estándar global de bienestar y plataforma de resistencia del universo Proiectio.">
     <meta name="twitter:image" content="https://www.humania.space/multimedia/humania-logo.png">
 
     <!-- Datos Estructurados Schema.org -->
@@ -38,7 +37,7 @@
       "name": "Humania Global Systems",
       "url": "https://www.humania.space",
       "logo": "https://www.humania.space/multimedia/humania-logo.png",
-      "description": "Estandar global de bienestar y red A.N.I.M.A.",
+      "description": "Estándar global de bienestar y red A.N.I.M.A.",
       "parentOrganization": {
         "@type": "Organization",
         "name": "SAPIENSIA Clan",
@@ -49,6 +48,136 @@
 
     <link rel="stylesheet" href="style.css">
     
+    <style>
+        /* ESTILOS DEL ESCÁNER Y TELEMETRÍA DINÁMICA */
+        .telemetry-dashboard {
+            background: var(--azul-vance);
+            color: white;
+            padding: 12px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+            font-family: monospace;
+            letter-spacing: 1.5px;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .telemetry-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--cian-anima);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--cian-anima);
+            animation: pulse-glow 1.5s infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from { opacity: 0.4; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Sección Escáner de Compatibilidad */
+        .scanner-section {
+            background: linear-gradient(180deg, #ffffff 0%, var(--gris-marmol) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-top: 1px solid rgba(197, 160, 89, 0.25);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.25);
+        }
+
+        .scanner-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid var(--oro-imperial);
+            padding: 40px;
+            box-shadow: 0 20px 45px rgba(8, 28, 46, 0.08);
+            position: relative;
+        }
+
+        .fingerprint-sensor {
+            width: 100px;
+            height: 100px;
+            margin: 25px auto;
+            border-radius: 50%;
+            border: 2px dashed var(--oro-imperial);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            background: rgba(197, 160, 89, 0.05);
+            transition: all 0.3s;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .fingerprint-sensor:hover {
+            background: rgba(197, 160, 89, 0.15);
+            border-style: solid;
+            box-shadow: 0 0 20px rgba(197, 160, 89, 0.4);
+        }
+
+        .fingerprint-sensor.scanning {
+            border-color: var(--cian-anima);
+            box-shadow: 0 0 25px rgba(0, 195, 255, 0.6);
+            animation: rotate-scanner 2s linear infinite;
+        }
+
+        @keyframes rotate-scanner {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .scanner-result {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(8, 28, 46, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            text-align: left;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--azul-vance);
+        }
+
+        .scanner-progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #eee;
+            margin-top: 15px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .scanner-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--cian-anima);
+            transition: width 0.1s linear;
+        }
+
+        .card-action-badge {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: var(--oro-imperial);
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--oro-imperial);
+            padding-bottom: 2px;
+        }
+    </style>
 </head>
 <body id="main-body">
 
@@ -64,14 +193,25 @@
         </div>
     </section>
 
-    <!-- 2. DASHBOARD A.N.I.M.A. -->
-    <div style="background: var(--azul-vance); color: white; padding: 15px; display: flex; justify-content: space-around; font-size: 0.7rem; font-family: monospace; letter-spacing: 2px;">
-        <div>LATENCIA: 0.8ms</div>
-        <div style="color: var(--cian-anima);">SALUD SINÁPTICA: 100%</div>
-        <div>RED A.N.I.M.A.: ÓPTIMA</div>
+    <!-- 2. TELEMETRÍA DINÁMICA A.N.I.M.A. (EN VIVO) -->
+    <div class="telemetry-dashboard">
+        <div class="telemetry-item">
+            <span class="pulse-dot"></span>
+            <span>RED A.N.I.M.A.: <strong style="color: #10b981;">ÓPTIMA</strong></span>
+        </div>
+        <div class="telemetry-item">
+            <span>LATENCIA SINÁPTICA: <strong id="telemetry-latency">0.8 ms</strong></span>
+        </div>
+        <div class="telemetry-item">
+            <span>CIUDADANOS EN SINCRONÍA: <strong id="telemetry-citizens" style="color: var(--cian-anima);">4,892,104</strong></span>
+        </div>
+        <div class="telemetry-item">
+            <span>ÍNDICE DE DISIDENCIA: <strong style="color: #60a5fa;">0.00% [PACIFICADO]</strong></span>
+        </div>
+        <canvas id="oscillo-canvas" width="120" height="24" style="vertical-align: middle;"></canvas>
     </div>
 
-    <!-- 3. EL LEGADO DE LA EVOLUCIÓN (SLIDER DE HITOS) -->
+    <!-- 3. EL LEGADO DE LA EVOLUCIÓN (SLIDER DE HITOS CNB) -->
     <div class="section-title">
         <h2>Nuestro Legado</h2>
         <p>Hitos tecnológicos que definieron la nueva era.</p>
@@ -86,49 +226,83 @@
         <div class="dots-container" id="hitos-dots"></div>
     </div>
 
-    <!-- 4. CICLO DE RECARGA (SOLARIS / VELVET) -->
-    <!-- 4. CICLO DE RECARGA (SOLARIS / VELVET) -->
-    <div class="section-title">
+    <!-- 4. CICLO DE RECARGA: NUTRICIÓN DE PRECISIÓN -->
+    <div class="section-title" id="seccion-nutricion">
         <h2>Nutrición de Precisión</h2>
         <p>El combustible oficial de la Gran Pacificación.</p>
     </div>
     
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 20px 40px 60px;">
         <!-- Tarjeta SOLARIS -->
-        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: #fff; border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.1); position: relative; overflow: hidden; transform-style: preserve-3d;">
+        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: #fff; border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.1); position: relative; overflow: hidden; transform-style: preserve-3d; cursor: pointer;" onclick="window.location.href='solaris.html'">
             <img src="multimedia/solaris-web.png" style="width: 100%; height: 300px; object-fit: cover; transform: translateZ(20px);">
             <div style="padding: 25px; transform: translateZ(30px); text-align: center;">
                 <h3 style="color: var(--azul-vance);">FASE DIURNA: SOLARIS</h3>
                 <p style="color: var(--texto-secundario); font-size: 0.85rem; margin-top: 10px;">Estimulación sintética calibrada. Voltaje puro para maximizar la conductividad de su jornada laboral.</p>
+                <span class="card-action-badge">Ver Ficha de Producto →</span>
             </div>
         </div>
 
         <!-- Tarjeta VELVET -->
-        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: var(--azul-vance); border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.2); position: relative; overflow: hidden; transform-style: preserve-3d;">
+        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: var(--azul-vance); border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.2); position: relative; overflow: hidden; transform-style: preserve-3d; cursor: pointer;" onclick="window.location.href='velvet.html'">
             <img src="multimedia/velvet-web.png" style="width: 100%; height: 300px; object-fit: cover; transform: translateZ(20px); opacity: 0.8;">
             <div style="padding: 25px; transform: translateZ(30px); text-align: center;">
                 <h3 style="color: var(--oro-imperial);">FASE NOCTURNA: VELVET</h3>
                 <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 10px;">El sedante oficial. Desconexión biológica inmediata y acceso directo a la red Proiectio.</p>
+                <span class="card-action-badge" style="color: var(--cian-anima); border-color: var(--cian-anima);">Acceso y Protocolo →</span>
             </div>
         </div>
 
         <!-- Tarjeta SOLARIS KIDS -->
-        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: #fffdf5; border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.1); position: relative; overflow: hidden; transform-style: preserve-3d;">
+        <div class="imperial-tilt-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.5" style="flex: 1; min-width: 300px; max-width: 450px; background: #fffdf5; border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.1); position: relative; overflow: hidden; transform-style: preserve-3d; cursor: pointer;" onclick="window.location.href='solariskids.html'">
             <img src="multimedia/solaris-kids.png" style="width: 100%; height: 300px; object-fit: cover; transform: translateZ(20px);">
             <div style="padding: 25px; transform: translateZ(30px); text-align: center;">
                 <h3 style="color: #e6a817;">FASE FORMATIVA: SOLARIS KIDS</h3>
                 <p style="color: var(--texto-secundario); font-size: 0.85rem; margin-top: 10px;">Nutrición infantil calibrada. Brindamos a las mentes del mañana la alegría y obediencia que necesitan para un futuro radiante.</p>
+                <span class="card-action-badge" style="color: #e6a817; border-color: #e6a817;">Ver Programa Escolar →</span>
             </div>
         </div>
     </div>
 
-    <!-- 5. ARQUITECTURA DE LA PAZ: LOS PRETORIANOS -->
-    <section style="padding: 100px 20px; text-align: center; background: var(--gris-marmol); border-top: 1px solid rgba(197, 160, 89, 0.2);">
+    <!-- 5. WIDGET INTERACTIVO: ESCÁNER DE COMPATIBILIDAD CNB -->
+    <section class="scanner-section" id="seccion-escaner">
+        <div class="scanner-box">
+            <span style="font-size: 0.72rem; color: var(--oro-imperial); letter-spacing: 3px; font-weight: bold; text-transform: uppercase;">Diagnóstico Biométrico Institucional</span>
+            <h2 style="color: var(--azul-vance); font-size: 1.8rem; margin: 10px 0 15px;">Test de Frecuencia Neural</h2>
+            <p style="color: var(--texto-secundario); font-size: 0.9rem; line-height: 1.6;">Mantenga pulsado el sensor durante dos segundos para verificar su compatibilidad sináptica con el estándar <strong>CNB-3</strong> y la Red A.N.I.M.A.</p>
+            
+            <div class="fingerprint-sensor" id="sensor-btn">
+                <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="var(--oro-imperial)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2a10 10 0 0 0-10 10c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path>
+                </svg>
+            </div>
+
+            <div class="scanner-progress-bar" id="scanner-bar">
+                <div class="scanner-progress-fill" id="scanner-fill"></div>
+            </div>
+
+            <div id="sensor-status" style="font-size: 0.8rem; color: #888; margin-top: 10px;">TOQUE Y MANTENGA PARA INICIAR ESCANEO</div>
+
+            <div class="scanner-result" id="scanner-result">
+                <div style="color: #10b981; font-weight: bold; margin-bottom: 8px;">✓ TELEMETRÍA BIOMÉTRICA CONCLUIDA CON ÉXITO</div>
+                <div>ID CIUDADANO: <strong id="res-id">HUM-8492-V</strong></div>
+                <div>FRECUENCIA RESONANCIA: <strong id="res-freq">45.02 GHz</strong></div>
+                <div>COMPATIBILIDAD CNB-3: <strong style="color: var(--oro-imperial);">99.84% [APTO]</strong></div>
+                <div>ESTADO DE LEALTAD BIOLÓGICA: <strong style="color: #10b981;">100% INMUNIZADO</strong></div>
+                <div style="margin-top: 10px; font-size: 0.75rem; color: #666; border-top: 1px dashed #ccc; padding-top: 8px;">
+                    Certificado de salud expedido por el Centinela de Humania. Presente este ID en su estación U.R.R. más cercana.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. ARQUITECTURA DE LA PAZ: LOS PRETORIANOS -->
+    <section class="seccion-pretorianos" id="seccion-pretorianos" style="padding: 100px 20px; text-align: center; background: var(--gris-marmol);">
         <div style="max-width: 900px; margin: 0 auto;">
             <h2 style="font-weight: 600; color: var(--azul-vance); margin-bottom: 10px;">La Muralla Blanca</h2>
             <p style="color: var(--texto-secundario); font-size: 1.1rem; margin-bottom: 40px; font-weight: 300;">Los Ángeles de Marfil que velan por tu seguridad.</p>
             
-            <div style="position: relative; margin: 30px 0; border: 1px solid var(--oro-imperial); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15);">
+            <div style="position: relative; margin: 30px 0; border: 1px solid var(--oro-imperial); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); cursor: pointer;" onclick="window.location.href='pretorianos.html'">
                 <img src="multimedia/pretorianos.png" style="width:100%; display: block; filter: contrast(1.05) brightness(1.05);">
                 <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(8, 28, 46, 0.95), transparent); padding: 40px 20px 20px; text-align: left;">
                     <p style="color: var(--oro-imperial); font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 2px;">Voluntas pro Pace</p>
@@ -137,11 +311,15 @@
             </div>
             
             <p style="color: var(--azul-vance); font-size: 1.2rem; font-weight: 600; font-family: 'Cinzel', serif; margin-top: 50px; letter-spacing: 1px;">"Estar vigilado es estar a salvo, porque fuera de la red de Humania, nadie vendrá a salvarte."</p>
-            <button class="btn-humania" style="margin-top: 30px;" onclick="window.location.href='https://www.proiect.io'">ÚNETE A LA SINCRONÍA</button>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <button class="btn-humania" onclick="window.location.href='pretorianos.html'">PROTOCOLOS PRETORIANOS</button>
+                <button class="btn-humania" style="background: var(--azul-vance); color: var(--oro-imperial);" onclick="window.location.href='https://www.proiect.io'">ÚNETE A LA SINCRONÍA</button>
+            </div>
         </div>
     </section>
 
-    <!-- 6. FOOTER MODULAR -->
+    <!-- 7. FOOTER MODULAR -->
     <div id="footer-placeholder"></div>
 
     <!-- SCRIPTS EXTERNOS -->
@@ -172,7 +350,8 @@
 
             // Configurar Sliders
             setupSlider('wrapper-hitos', 'hitos-track', 'hitos-dots', 4);
-            setupSlider('wrapper-nutri', 'nutri-track', 'nutri-dots', 2);
+            iniciarTelemetria();
+            iniciarEscanerBiometrico();
         }
 
         function setupSlider(wId, tId, dId, count) {
@@ -189,6 +368,121 @@
             function anim() { t.style.transform = `translateX(${cT}px)`; if(isD) requestAnimationFrame(anim); }
             function setP() { cT = idx * -w.offsetWidth; pT = cT; t.style.transform = `translateX(${cT}px)`; dC.querySelectorAll('.dot').forEach((d, i) => d.className = 'dot' + (i===idx?' active':'')); }
             setInterval(() => { if(!isD) { idx = (idx+1)%count; setP(); } }, 6000);
+        }
+
+        // --- OSCILOSCOPIO Y TELEMETRÍA EN VIVO ---
+        function iniciarTelemetria() {
+            let citizens = 4892104;
+            const citEl = document.getElementById('telemetry-citizens');
+            const latEl = document.getElementById('telemetry-latency');
+            
+            setInterval(() => {
+                citizens += Math.floor(Math.random() * 4) + 1;
+                if (citEl) citEl.textContent = citizens.toLocaleString('es-ES');
+                if (latEl) latEl.textContent = (0.78 + Math.random() * 0.05).toFixed(2) + ' ms';
+            }, 2500);
+
+            // Osciloscopio Canvas
+            const cvs = document.getElementById('oscillo-canvas');
+            if (!cvs) return;
+            const ctx = cvs.getContext('2d');
+            let t = 0;
+
+            function drawWave() {
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+                ctx.beginPath();
+                ctx.lineWidth = 1.5;
+                ctx.strokeStyle = '#00c3ff';
+                for (let x = 0; x < cvs.width; x++) {
+                    const y = cvs.height / 2 + Math.sin((x * 0.1) + t) * 6 * Math.sin((x * 0.03) + (t * 0.5));
+                    if (x === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+                t += 0.08;
+                requestAnimationFrame(drawWave);
+            }
+            drawWave();
+        }
+
+        // --- ESCÁNER BIOMÉTRICO INTERACTIVO ---
+        function iniciarEscanerBiometrico() {
+            const sensor = document.getElementById('sensor-btn');
+            const bar = document.getElementById('scanner-bar');
+            const fill = document.getElementById('scanner-fill');
+            const status = document.getElementById('sensor-status');
+            const result = document.getElementById('scanner-result');
+            if (!sensor) return;
+
+            let timer = null, progress = 0, audioCtx = null;
+
+            function playScanTone(freq = 440) {
+                try {
+                    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+                    gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.15);
+                } catch(e){}
+            }
+
+            function startScan(e) {
+                e.preventDefault();
+                progress = 0;
+                bar.style.display = 'block';
+                result.style.display = 'none';
+                sensor.classList.add('scanning');
+                status.textContent = 'ANALIZANDO FRECUENCIA NEURAL...';
+                status.style.color = 'var(--cian-anima)';
+
+                timer = setInterval(() => {
+                    progress += 5;
+                    fill.style.width = progress + '%';
+                    playScanTone(300 + (progress * 6));
+                    if (progress >= 100) {
+                        clearInterval(timer);
+                        concluirEscaneo();
+                    }
+                }, 50);
+            }
+
+            function cancelScan() {
+                if (progress < 100 && timer) {
+                    clearInterval(timer);
+                    sensor.classList.remove('scanning');
+                    bar.style.display = 'none';
+                    fill.style.width = '0%';
+                    status.textContent = 'ESCANEO INTERRUMPIDO. MANTENGA PULSADO.';
+                    status.style.color = '#e11d48';
+                }
+            }
+
+            function concluirEscaneo() {
+                sensor.classList.remove('scanning');
+                bar.style.display = 'none';
+                status.textContent = 'SINTONÍA BIO-DIGITAL VERIFICADA';
+                status.style.color = '#10b981';
+                
+                const randCode = Math.floor(1000 + Math.random() * 9000);
+                const randLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                document.getElementById('res-id').textContent = `HUM-${randCode}-${randLetter}`;
+                document.getElementById('res-freq').textContent = `${(44.9 + Math.random() * 0.3).toFixed(2)} GHz`;
+                result.style.display = 'block';
+                playScanTone(880);
+            }
+
+            sensor.addEventListener('mousedown', startScan);
+            sensor.addEventListener('mouseup', cancelScan);
+            sensor.addEventListener('mouseleave', cancelScan);
+
+            sensor.addEventListener('touchstart', startScan);
+            sensor.addEventListener('touchend', cancelScan);
         }
 
         // Ejecutar carga al iniciar

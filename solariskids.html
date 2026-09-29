@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase Formativa: SOLARIS KIDS — HUMANIA GLOBAL SYSTEMS</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Metadatos SEO y Transmedia -->
+    <link rel="canonical" href="https://www.humania.space/solariskids.html" />
+    <meta name="description" content="Solaris Kids: Nutrición infantil calibrada. Forjando mentes armoniosas, adaptadas a la tecnología sináptica y preparadas para el futuro de la Gran Pacificación.">
+    <meta name="keywords" content="Solaris Kids, nutricion infantil, fase formativa, humania, desarrollo cognitivo, paz preventiva">
+    <meta name="author" content="Anigami Agadni y SAPIENSIA Clan">
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.humania.space/solariskids.html">
+    <meta property="og:site_name" content="HUMANIA">
+    <meta property="og:title" content="Fase Formativa: SOLARIS KIDS — Nutrición Infantil Calibrada">
+    <meta property="og:description" content="Nutrición infantil calibrada para las mentes del mañana. Alegría, enfoque y obediencia armónica.">
+    <meta property="og:image" content="https://www.humania.space/multimedia/solaris-kids.png">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .lore-container {
+            max-width: 1000px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
+
+        .lore-hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            background: linear-gradient(135deg, rgba(8, 28, 46, 0.88) 0%, rgba(245, 158, 11, 0.55) 100%), url('multimedia/solaris-kids.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 2px solid var(--oro-imperial);
+        }
+
+        .lore-hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .badge-milestone {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.25);
+            color: #f59e0b;
+            border: 1px solid #f59e0b;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lore-hero h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .lore-hero p {
+            font-size: 1.15rem;
+            color: #fffdf5;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .nav-breadcrumb {
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: var(--texto-secundario);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-breadcrumb a {
+            color: var(--azul-vance);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-breadcrumb a:hover {
+            color: var(--oro-imperial);
+        }
+
+        .lore-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .lore-grid {
+                grid-template-columns: 1fr;
+            }
+            .lore-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .lore-article {
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: 0 10px 30px rgba(8, 28, 46, 0.04);
+        }
+
+        .lore-article h2 {
+            color: var(--azul-vance);
+            font-size: 1.6rem;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--gris-marmol);
+            letter-spacing: 1.5px;
+        }
+
+        .lore-article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .lore-article p {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .feature-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        @media (max-width: 600px) {
+            .feature-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-box {
+            background: #fffdf5;
+            border-left: 3px solid #f59e0b;
+            padding: 18px 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(8, 28, 46, 0.08);
+        }
+
+        .feature-box h4 {
+            color: var(--azul-vance);
+            margin: 0 0 8px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .feature-box p {
+            font-size: 0.85rem !important;
+            margin: 0 !important;
+            line-height: 1.5 !important;
+            color: var(--texto-secundario);
+        }
+
+        .quote-box {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid #f59e0b;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--azul-vance);
+        }
+
+        .quote-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--azul-vance);
+        }
+
+        .quote-author {
+            margin-top: 10px !important;
+            font-size: 0.8rem !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #d97706 !important;
+            font-style: normal;
+        }
+
+        /* Sidebar Tecnico */
+        .tech-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-card {
+            background: #ffffff;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(8, 28, 46, 0.05);
+        }
+
+        .tech-card h3 {
+            color: var(--azul-vance);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--oro-imperial);
+            padding-bottom: 6px;
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        .spec-list li span:first-child {
+            font-weight: 600;
+            color: var(--azul-vance);
+        }
+
+        .spec-list li span:last-child {
+            font-family: monospace;
+            color: #d97706;
+            font-weight: bold;
+        }
+
+        .btn-nav-chapter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--azul-vance);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn-nav-chapter:hover {
+            background: var(--oro-imperial);
+            color: var(--azul-vance);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body id="main-body">
+
+    <!-- 0. HEADER MODULAR -->
+    <div id="header-placeholder"></div>
+
+    <!-- 1. HERO ESPECÍFICO -->
+    <section class="lore-hero">
+        <div class="lore-hero-content">
+            <span class="badge-milestone">Nutrición de Precisión // Fase Formativa</span>
+            <h1>SOLARIS KIDS</h1>
+            <p>El balance biológico para las mentes del mañana. Desarrollo cognitivo blindado, estabilidad emocional y preparación para la era sináptica.</p>
+        </div>
+    </section>
+
+    <!-- 2. CONTENIDO PRINCIPAL Y LORE -->
+    <main class="lore-container">
+        <!-- Miga de Pan -->
+        <div class="nav-breadcrumb">
+            <a href="index.html">Humania</a>
+            <span>/</span>
+            <a href="index.html#seccion-nutricion">Nutrición de Precisión</a>
+            <span>/</span>
+            <span>Solaris Kids</span>
+        </div>
+
+        <div class="lore-grid">
+            <!-- Artículo Narrativo -->
+            <article class="lore-article">
+                <h2>Moldeando el Futuro de la Civilización</h2>
+                <p>La infancia en el modelo de <strong>Humania Global Systems</strong> es considerada la fase biológica más crítica y vulnerable. <strong>SOLARIS KIDS</strong> fue formulado por comités multidisciplinares de pediatras, neurobiólogos y educadores corporativos con el objetivo de asegurar que cada niño crezca con una estructura sináptica fuerte, serena y receptiva a los valores de la convivencia armónica.</p>
+
+                <p>Presentado en gominolas masticables con sabor a frutas naturales enriquecidas, Solaris Kids elimina las rabietas, la hiperactividad descontrolada y las brechas atencionales, fomentando una disposición alegre y colaborativa en los centros de aprendizaje estandarizados.</p>
+
+                <div class="quote-box">
+                    <p>"Un niño protegido de sus propios impulsos caóticos es un futuro ciudadano en paz consigo mismo y con la sociedad."</p>
+                    <div class="quote-author">— Consejo Pedagógico de la Gran Pacificación</div>
+                </div>
+
+                <h2>Pilares del Crecimiento Calibrado</h2>
+                <p>La formulación de Solaris Kids acompaña las tres etapas clave del neuro-desarrollo infantil:</p>
+
+                <div class="feature-card-grid">
+                    <div class="feature-box">
+                        <h4>Mielinización Guiada</h4>
+                        <p>Lípidos bio-idénticos que fortalecen la velocidad de conducción en los axones cerebrales en crecimiento.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Filtro de Sobrecarga Sensorial</h4>
+                        <p>Protección contra la ansiedad provocada por estímulos urbanos y transmisiones de alta densidad.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Aclimatación Sináptica Temprana</h4>
+                        <p>Prepara la corteza craneal para una futura recepción suave y biocompatible del implante CNB.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4>Equilibrio Inmunitario Total</h4>
+                        <p>Micro-inmunoglobulinas que blindan el organismo frente a patógenos biológicos comunes.</p>
+                    </div>
+                </div>
+
+                <h2>Programa Escolar y Supervisión Familiar</h2>
+                <p>La administración diaria de Solaris Kids forma parte obligatoria del protocolo escolar en todas las academias de Humania. Los tutores reciben informes biométricos diarios a través de la Red A.N.I.M.A. certificando la correcta asimilación nutricional y el índice de armonía conductual de sus hijos.</p>
+            </article>
+
+            <!-- Barra Lateral con Ficha Técnica -->
+            <aside class="tech-sidebar">
+                <div class="tech-card">
+                    <h3>Ficha Técnica SOLARIS KIDS</h3>
+                    <ul class="spec-list">
+                        <li><span>Presentación:</span> <span>Gomitas Bio-Masticables 30u</span></li>
+                        <li><span>Rango de Edad:</span> <span>3 a 14 años</span></li>
+                        <li><span>Complejo Neuro:</span> <span>Mielina-Vance Junior</span></li>
+                        <li><span>Azúcares Libres:</span> <span>0% (Endulzante Xilitol-B)</span></li>
+                        <li><span>Índice Armónico:</span> <span>99.2% de estabilidad</span></li>
+                        <li><span>Certificación:</span> <span>Estándar Humania Juvenil</span></li>
+                        <li><span>Dosis Oficial:</span> <span>1 unidad matutina</span></li>
+                    </ul>
+                </div>
+
+                <div class="tech-card" style="background: var(--gris-marmol);">
+                    <h3 style="border-color: var(--azul-vance);">Ciclo Adulto</h3>
+                    <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 15px;">Conozca la versión oficial para el ciudadano en etapa laboral productiva.</p>
+                    <a href="solaris.html" class="btn-nav-chapter" style="background: #f59e0b; color: #081c2e;">
+                        <span>SOLARIS ADULTO →</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER MODULAR -->
+    <div id="footer-placeholder"></div>
+
+    <script src="transmedia-transition.js"></script>
+    <script>
+        async function cargarModulos() {
+            try {
+                const h = await fetch('header.html').then(r => r.text());
+                document.getElementById('header-placeholder').innerHTML = h;
+                const f = await fetch('footer.html').then(r => r.text());
+                document.getElementById('footer-placeholder').innerHTML = f;
+            } catch (e) { console.error(e); }
+        }
+        cargarModulos();
+    </script>
+    <script src="deva-clandestine-protocol.js?v=1.0"></script>
+</body>
+</html>
