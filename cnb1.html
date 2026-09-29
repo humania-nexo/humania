@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto CNB-1: Libertad Motriz Absoluta — HUMANIA GLOBAL SYSTEMS</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Metadatos SEO y Transmedia -->
+    <link rel="canonical" href="https://www.humania.space/cnb1.html" />
+    <meta name="description" content="Proyecto CNB-1: El primer hito de Humania Global Systems. El implante neural que devolvió la libertad motriz y sensorial al ser humano.">
+    <meta name="keywords" content="CNB-1, chip neural, humania, elias vance, aris thorne, libertad motriz, proiectio, red anima">
+    <meta name="author" content="Anigami Agadni y SAPIENSIA Clan">
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.humania.space/cnb1.html">
+    <meta property="og:site_name" content="HUMANIA">
+    <meta property="og:title" content="Proyecto CNB-1: Libertad Motriz Absoluta">
+    <meta property="og:description" content="El origen de la interfaz cerebro-máquina. Hace 47 años, devolvimos la autonomía a quienes la habían perdido.">
+    <meta property="og:image" content="https://www.humania.space/multimedia/hito-1.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .lore-container {
+            max-width: 1000px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
+
+        .lore-hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            background: linear-gradient(135deg, rgba(8, 28, 46, 0.9) 0%, rgba(8, 28, 46, 0.6) 100%), url('multimedia/hito-1.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 2px solid var(--oro-imperial);
+        }
+
+        .lore-hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .badge-milestone {
+            display: inline-block;
+            background: rgba(197, 160, 89, 0.15);
+            color: var(--oro-imperial);
+            border: 1px solid var(--oro-imperial);
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .lore-hero h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .lore-hero p {
+            font-size: 1.15rem;
+            color: #e0e7ff;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .nav-breadcrumb {
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: var(--texto-secundario);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-breadcrumb a {
+            color: var(--azul-vance);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-breadcrumb a:hover {
+            color: var(--oro-imperial);
+        }
+
+        .lore-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .lore-grid {
+                grid-template-columns: 1fr;
+            }
+            .lore-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .lore-article {
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: 0 10px 30px rgba(8, 28, 46, 0.04);
+        }
+
+        .lore-article h2 {
+            color: var(--azul-vance);
+            font-size: 1.6rem;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--gris-marmol);
+            letter-spacing: 1.5px;
+        }
+
+        .lore-article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .lore-article p {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .quote-box {
+            background: rgba(8, 28, 46, 0.03);
+            border-left: 4px solid var(--oro-imperial);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--azul-vance);
+        }
+
+        .quote-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--azul-vance);
+        }
+
+        .quote-author {
+            margin-top: 10px !important;
+            font-size: 0.8rem !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--oro-imperial) !important;
+            font-style: normal;
+        }
+
+        /* Sidebar Tecnico */
+        .tech-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-card {
+            background: #ffffff;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(8, 28, 46, 0.05);
+        }
+
+        .tech-card h3 {
+            color: var(--azul-vance);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--oro-imperial);
+            padding-bottom: 6px;
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        .spec-list li span:first-child {
+            font-weight: 600;
+            color: var(--azul-vance);
+        }
+
+        .spec-list li span:last-child {
+            font-family: monospace;
+            color: #2563eb;
+        }
+
+        .founders-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .founders-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.9rem;
+            color: var(--texto-primario);
+        }
+
+        .founders-list li strong {
+            color: var(--azul-vance);
+            display: block;
+        }
+
+        .founders-list li span {
+            font-size: 0.78rem;
+            color: var(--texto-secundario);
+        }
+
+        .btn-nav-chapter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--azul-vance);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-nav-chapter:hover {
+            background: var(--oro-imperial);
+            color: var(--azul-vance);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body id="main-body">
+
+    <!-- 0. HEADER MODULAR -->
+    <div id="header-placeholder"></div>
+
+    <!-- 1. HERO ESPECÍFICO DE HITO -->
+    <section class="lore-hero">
+        <div class="lore-hero-content">
+            <span class="badge-milestone">Hito Tecnológico // Año 01</span>
+            <h1>Proyecto CNB-1</h1>
+            <p>La génesis de la interfaz cerebro-computador: devolviendo la libertad motriz y sensorial al ser humano.</p>
+        </div>
+    </section>
+
+    <!-- 2. CONTENIDO PRINCIPAL Y LORE -->
+    <main class="lore-container">
+        <!-- Miga de Pan -->
+        <div class="nav-breadcrumb">
+            <a href="index.html">Humania</a>
+            <span>/</span>
+            <a href="index.html#wrapper-hitos">Nuestro Legado</a>
+            <span>/</span>
+            <span>Proyecto CNB-1</span>
+        </div>
+
+        <div class="lore-grid">
+            <!-- Artículo Narrativo -->
+            <article class="lore-article">
+                <h2>El Sueño Fundacional: Un Puente Hacia la Libertad</h2>
+                <p>Hace cuarenta y siete años, en un modesto laboratorio de investigación neurocientífica en Europa, cinco mentes visionarias se unieron con un único propósito ético: <em>"La tecnología como puente para la libertad humana"</em>. Financiados inicialmente con subvenciones públicas y donaciones filantrópicas, el equipo fundador no perseguía la hegemonía comercial, sino el rescate de la dignidad corporal.</p>
+
+                <p>El <strong>Proyecto CNB-1 (Cerebral Neural Bridge, Versión 1)</strong> fue concebido como un micro-implante de tan solo 1 centímetro, calibrado para conectarse directamente con los haces de neuronas motoras superiores. El dispositivo traducía las intenciones cinéticas del córtex motor en señales eléctricas limpias capaces de controlar prótesis biónicas y sillas de ruedas automatizadas con precisión de milisegundos.</p>
+
+                <div class="quote-box">
+                    <p>"No modelamos código para gobernar la mente; tejemos silicio para que el cuerpo vuelva a obedecer al deseo del espíritu."</p>
+                    <div class="quote-author">— Dr. Aris Thorne (Discurso de Apertura, Simposio de Neurobiología, Año 01)</div>
+                </div>
+
+                <h2>Las Primeras Aplicaciones Médicas</h2>
+                <p>Durante los primeros dos años de despliegue, más de mil personas con cuadriplejía, atrofia espinal y traumatismos severos recuperaron la autonomía básica. El CNB-1 se distribuyó de forma gratuita en hospitales comunitarios antes de que las patentes fueran absorbidas por el consorcio corporativo:</p>
+
+                <ul>
+                    <li><strong>Tecnología de Visión Neuronal:</strong> A través de micro-cámaras montadas en lentes de contacto que enviaban ráfagas de impulsos a la corteza visual, personas con ceguera total pudieron discernir formas, contrastes y movimiento por primera vez en la historia.</li>
+                    <li><strong>Generador de Voz Neuronal:</strong> Decodificando los micro-impulsos del área de Broca, el chip restituía el habla sintética fluida a pacientes con parálisis de cuerdas vocales o esclerosis lateral amiotrófica.</li>
+                    <li><strong>Restauración Sensorial Táctil:</strong> Sensores micro-piezoeléctricos en extremidades biónicas que devolvían la sensación de textura, temperatura y presión al sistema nervioso central.</li>
+                </ul>
+
+                <h2>La Semilla de la Transformación</h2>
+                <p>El éxito clínico del CNB-1 demostró al mundo que la barrera entre la biología y el silicio no solo era franqueable, sino infinitamente maleable. Lo que nació como una herramienta de sanación sentó las bases de la arquitectura neural que, décadas más tarde, evolucionaría hacia la integración total de la sociedad moderna bajo la tutela de <strong>Humania Global Systems</strong>.</p>
+            </article>
+
+            <!-- Barra Lateral con Ficha Técnica -->
+            <aside class="tech-sidebar">
+                <div class="tech-card">
+                    <h3>Ficha Técnica CNB-1</h3>
+                    <ul class="spec-list">
+                        <li><span>Dimensiones:</span> <span>10 mm x 10 mm x 0.8 mm</span></li>
+                        <li><span>Arquitectura:</span> <span>Neuro-Silicio Mono-Núcleo</span></li>
+                        <li><span>Canales Sinápticos:</span> <span>1,024 electrodos activos</span></li>
+                        <li><span>Latencia de Respuesta:</span> <span>12.4 ms</span></li>
+                        <li><span>Consumo Energético:</span> <span>0.05 mW (Bio-inductivo)</span></li>
+                        <li><span>Biocompatibilidad:</span> <span>Grado Médico V-1 (Titanio)</span></li>
+                        <li><span>Objetivo Primario:</span> <span>Rehabilitación Motriz</span></li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>El Equipo Fundador</h3>
+                    <ul class="founders-list">
+                        <li>
+                            <strong>Dr. Aris Thorne</strong>
+                            <span>Neurocirujano & Líder de Proyecto</span>
+                        </li>
+                        <li>
+                            <strong>Dr. Marcus Chen</strong>
+                            <span>Ingeniero Biomédico & Hardware</span>
+                        </li>
+                        <li>
+                            <strong>Dra. Sofia Romero</strong>
+                            <span>Especialista en Sensores de Bio-Captura</span>
+                        </li>
+                        <li>
+                            <strong>Dr. Liam Walsh</strong>
+                            <span>Arquitecto de Código & Algoritmos</span>
+                        </li>
+                        <li>
+                            <strong>Dr. Hiroshi Tanaka</strong>
+                            <span>Físico de Micro-Ondas & Resonancia</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tech-card" style="background: var(--gris-marmol);">
+                    <h3 style="border-color: var(--azul-vance);">Siguiente Hito</h3>
+                    <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 15px;">Descubra cómo el CNB-2 transformó la rehabilitación individual en un sistema integral de salud preventiva.</p>
+                    <a href="cnb2.html" class="btn-nav-chapter">
+                        <span>INTEGRACIÓN CNB-2</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER MODULAR -->
+    <div id="footer-placeholder"></div>
+
+    <script src="transmedia-transition.js"></script>
+    <script>
+        async function cargarModulos() {
+            try {
+                const h = await fetch('header.html').then(r => r.text());
+                document.getElementById('header-placeholder').innerHTML = h;
+                const f = await fetch('footer.html').then(r => r.text());
+                document.getElementById('footer-placeholder').innerHTML = f;
+            } catch (e) { console.error(e); }
+        }
+        cargarModulos();
+    </script>
+    <script src="deva-clandestine-protocol.js?v=1.0"></script>
+</body>
+</html>

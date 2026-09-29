@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red A.N.I.M.A.: La Conexión Que Erradicó la Soledad — HUMANIA GLOBAL SYSTEMS</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Metadatos SEO y Transmedia -->
+    <link rel="canonical" href="https://www.humania.space/anima.html" />
+    <meta name="description" content="Red A.N.I.M.A. (Advanced Neural Integration & Monitoring Array): La infraestructura orbital y terrestre de sincronización global de Humania.">
+    <meta name="keywords" content="Red ANIMA, A.N.I.M.A., telemetría satelital, latencia 0.8ms, paz preventiva, aris thorne, humania, proyectio">
+    <meta name="author" content="Anigami Agadni y SAPIENSIA Clan">
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.humania.space/anima.html">
+    <meta property="og:site_name" content="HUMANIA">
+    <meta property="og:title" content="Red A.N.I.M.A.: La Conexión Que Erradicó la Soledad">
+    <meta property="og:description" content="La infraestructura de sincronización masiva que unificó el pulso vital de la humanidad bajo el estándar de la Paz Preventiva.">
+    <meta property="og:image" content="https://www.humania.space/multimedia/hito-3.jpg">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .lore-container {
+            max-width: 1000px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
+
+        .lore-hero {
+            position: relative;
+            height: 55vh;
+            min-height: 380px;
+            background: linear-gradient(135deg, rgba(8, 28, 46, 0.94) 0%, rgba(8, 28, 46, 0.7) 100%), url('multimedia/hito-3.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 2px solid var(--oro-imperial);
+        }
+
+        .lore-hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .badge-milestone {
+            display: inline-block;
+            background: rgba(0, 195, 255, 0.2);
+            color: var(--cian-anima);
+            border: 1px solid var(--cian-anima);
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(0, 195, 255, 0.3);
+        }
+
+        .lore-hero h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .lore-hero p {
+            font-size: 1.15rem;
+            color: #e0e7ff;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .nav-breadcrumb {
+            padding: 20px 0;
+            font-size: 0.8rem;
+            color: var(--texto-secundario);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-breadcrumb a {
+            color: var(--azul-vance);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-breadcrumb a:hover {
+            color: var(--oro-imperial);
+        }
+
+        .lore-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .lore-grid {
+                grid-template-columns: 1fr;
+            }
+            .lore-hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .lore-article {
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: 0 10px 30px rgba(8, 28, 46, 0.04);
+        }
+
+        .lore-article h2 {
+            color: var(--azul-vance);
+            font-size: 1.6rem;
+            margin: 35px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--gris-marmol);
+            letter-spacing: 1.5px;
+        }
+
+        .lore-article h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .lore-article p {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+            line-height: 1.85;
+            margin-bottom: 20px;
+        }
+
+        .telemetry-banner {
+            background: var(--azul-vance);
+            color: #fff;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid var(--cian-anima);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            text-align: center;
+            font-family: monospace;
+        }
+
+        .telemetry-item .value {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--cian-anima);
+            letter-spacing: 1px;
+        }
+
+        .telemetry-item .label {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .quote-box {
+            background: rgba(8, 28, 46, 0.03);
+            border-left: 4px solid var(--oro-imperial);
+            padding: 20px 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--azul-vance);
+        }
+
+        .quote-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            color: var(--azul-vance);
+        }
+
+        .quote-author {
+            margin-top: 10px !important;
+            font-size: 0.8rem !important;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--oro-imperial) !important;
+            font-style: normal;
+        }
+
+        /* Sidebar Tecnico */
+        .tech-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .tech-card {
+            background: #ffffff;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(8, 28, 46, 0.05);
+        }
+
+        .tech-card h3 {
+            color: var(--azul-vance);
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            border-bottom: 2px solid var(--oro-imperial);
+            padding-bottom: 6px;
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e5e7eb;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        .spec-list li span:first-child {
+            font-weight: 600;
+            color: var(--azul-vance);
+        }
+
+        .spec-list li span:last-child {
+            font-family: monospace;
+            color: var(--cian-anima);
+        }
+
+        .btn-nav-chapter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--azul-vance);
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-nav-chapter:hover {
+            background: var(--oro-imperial);
+            color: var(--azul-vance);
+            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body id="main-body">
+
+    <!-- 0. HEADER MODULAR -->
+    <div id="header-placeholder"></div>
+
+    <!-- 1. HERO ESPECÍFICO DE HITO -->
+    <section class="lore-hero">
+        <div class="lore-hero-content">
+            <span class="badge-milestone">Infraestructura Global // Red A.N.I.M.A.</span>
+            <h1>Red A.N.I.M.A.</h1>
+            <p>Advanced Neural Integration & Monitoring Array: La infraestructura que erradicó la soledad y fundó la Paz Preventiva.</p>
+        </div>
+    </section>
+
+    <!-- 2. CONTENIDO PRINCIPAL Y LORE -->
+    <main class="lore-container">
+        <!-- Miga de Pan -->
+        <div class="nav-breadcrumb">
+            <a href="index.html">Humania</a>
+            <span>/</span>
+            <a href="index.html#wrapper-hitos">Nuestro Legado</a>
+            <span>/</span>
+            <span>Red A.N.I.M.A.</span>
+        </div>
+
+        <div class="lore-grid">
+            <!-- Artículo Narrativo -->
+            <article class="lore-article">
+                <h2>El Tejido Invisible de la Civilización</h2>
+                <p>Conforme decenas de millones de ciudadanos adoptaban los implantes CNB-1 y CNB-2, el volumen de telemetría sináptica desbordó las redes satelitales y de telecomunicación tradicionales. Para evitar la fragmentación de datos y garantizar la continuidad absoluta del enlace cerebral, <strong>Humania Global Systems</strong> desplegó la mayor obra de ingeniería del siglo XXI: la <strong>Red A.N.I.M.A. (Advanced Neural Integration & Monitoring Array)</strong>.</p>
+
+                <!-- Dashboard de Telemetría -->
+                <div class="telemetry-banner">
+                    <div class="telemetry-item">
+                        <div class="value">0.8 ms</div>
+                        <div class="label">Latencia Promedio</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="value">1.0 cm</div>
+                        <div class="label">Precisión de Foco</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="value">99.999%</div>
+                        <div class="label">Sincronía Global</div>
+                    </div>
+                    <div class="telemetry-item">
+                        <div class="value">24,000+</div>
+                        <div class="label">Nodos Orbitales</div>
+                    </div>
+                </div>
+
+                <h2>Arquitectura de la Matriz A.N.I.M.A.</h2>
+                <p>A.N.I.M.A. opera mediante una estructura concéntrica de tres capas impenetrables:</p>
+                <ul>
+                    <li><strong>Constelación Orbital de Baja Altitud (LEO):</strong> Miles de micro-satélites de microondas calibradas que barren la superficie terrestre en tiempo real, garantizando cobertura sin puntos ciegos desde las metrópolis hasta los océanos.</li>
+                    <li><strong>Red de Repetidores Tácticos Terrestres:</strong> Torres de enlace ubicadas estratégicamente en edificios gubernamentales, alumbrado público y centros urbanos que canalizan el flujo de datos con ancho de banda dedicado a nivel de nanosegundos.</li>
+                    <li><strong>Nodos Subterráneos de Fibra Cuántica:</strong> Búnkeres sellados donde las firmas neuronales son procesadas por el Algoritmo de Patrones Conductuales (APC).</li>
+                </ul>
+
+                <div class="quote-box">
+                    <p>"Estar vigilado es estar a salvo, porque fuera de la red de Humania, nadie vendrá a salvarte."</p>
+                    <div class="quote-author">— Máxima Institucional de Humania Global Systems (Año 22)</div>
+                </div>
+
+                <h2>La Erradicación de la Soledad y el Monopolio de la Paz</h2>
+                <p>Bajo la consigna de <em>"Salud Sin Fronteras"</em>, Humania presentó la Red A.N.I.M.A. como la redención emocional de la especie: nadie volvería a sentirse solo, desamparado o incomunicado. Cada latido, cada variación de dopamina y cada pensamiento de angustia era registrado y atendido por el ecosistema asistencial.</p>
+
+                <p>Sin embargo, esta hiperconectividad otorgó a la corporación la llave maestra del orden global: al centralizar las finanzas (Fragmentos de Éter), los accesos a la vivienda y la nutrición en la firma del chip, la red A.N.I.M.A. se convirtió en el instrumento supremo de la <strong>Paz Preventiva</strong> y en el soporte vital del posterior puente dimensional hacia <strong>Proiectio</strong>.</p>
+            </article>
+
+            <!-- Barra Lateral con Ficha Técnica -->
+            <aside class="tech-sidebar">
+                <div class="tech-card">
+                    <h3>Parámetros de Red A.N.I.M.A.</h3>
+                    <ul class="spec-list">
+                        <li><span>Banda de Operación:</span> <span>TeraHertz Neuronal</span></li>
+                        <li><span>Ancho de Banda:</span> <span>100 Pbps / Nodo Central</span></li>
+                        <li><span>Protocolo de Capa:</span> <span>BIFROST Sync v4.2</span></li>
+                        <li><span>Cifrado:</span> <span>Algoritmo Cuántico SICA</span></li>
+                        <li><span>Precisión de Posición:</span> <span>&lt; 10 mm en 3D</span></li>
+                        <li><span>Monitoreo Activo:</span> <span>24/7/365 en Tiempo Real</span></li>
+                        <li><span>Estado Operativo:</span> <span style="color:#10b981;">100% ÓPTIMO</span></li>
+                    </ul>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Ecosistema Integrado</h3>
+                    <ul class="founders-list">
+                        <li>
+                            <strong>Paz Preventiva</strong>
+                            <span>Neutralización algorítmica del crimen</span>
+                        </li>
+                        <li>
+                            <strong>Economía del Éter (FE)</strong>
+                            <span>Validación de pagos por pulso cardíaco</span>
+                        </li>
+                        <li>
+                            <strong>Puente Proiectio</strong>
+                            <span>Inmersión REM y mapeo de conciencias</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tech-card" style="background: var(--gris-marmol);">
+                    <h3 style="border-color: var(--oro-imperial);">Explorar Proiectio</h3>
+                    <p style="font-size: 0.85rem; color: var(--texto-secundario); margin-bottom: 15px;">Acceda a la plataforma de mundos virtuales creada sobre la infraestructura A.N.I.M.A.</p>
+                    <a href="https://www.proiect.io" class="btn-nav-chapter" style="background: var(--oro-imperial); color: var(--azul-vance);">
+                        <span>PORTAL PROIECTIO</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- 3. FOOTER MODULAR -->
+    <div id="footer-placeholder"></div>
+
+    <script src="transmedia-transition.js"></script>
+    <script>
+        async function cargarModulos() {
+            try {
+                const h = await fetch('header.html').then(r => r.text());
+                document.getElementById('header-placeholder').innerHTML = h;
+                const f = await fetch('footer.html').then(r => r.text());
+                document.getElementById('footer-placeholder').innerHTML = f;
+            } catch (e) { console.error(e); }
+        }
+        cargarModulos();
+    </script>
+    <script src="deva-clandestine-protocol.js?v=1.0"></script>
+</body>
+</html>
