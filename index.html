@@ -296,24 +296,58 @@
         </div>
     </section>
 
-    <!-- 6. ARQUITECTURA DE LA PAZ: LOS PRETORIANOS -->
-    <section class="seccion-pretorianos" id="seccion-pretorianos" style="padding: 100px 20px; text-align: center; background: var(--gris-marmol);">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 style="font-weight: 600; color: var(--azul-vance); margin-bottom: 10px;">La Muralla Blanca</h2>
-            <p style="color: var(--texto-secundario); font-size: 1.1rem; margin-bottom: 40px; font-weight: 300;">Los Ángeles de Marfil que velan por tu seguridad.</p>
+    <!-- 6. ARQUITECTURA DE LA PAZ: CUERPOS DE SEGURIDAD -->
+    <section class="seccion-pretorianos" id="seccion-seguridad" style="padding: 90px 20px; text-align: center; background: var(--gris-marmol);">
+        <div style="max-width: 1050px; margin: 0 auto;">
+            <span style="font-size: 0.75rem; color: var(--oro-imperial); letter-spacing: 3px; font-weight: bold; text-transform: uppercase;">Doctrina de Seguridad & Paz Preventiva</span>
+            <h2 style="font-weight: 600; color: var(--azul-vance); margin: 10px 0 15px; font-size: 2.2rem;">Cuerpos de Seguridad de Humania</h2>
+            <p style="color: var(--texto-secundario); font-size: 1.05rem; margin-bottom: 40px; font-weight: 300; max-width: 750px; margin-left: auto; margin-right: auto;">
+                La estabilidad de la civilización se sostiene sobre dos pilares complementarios: el patrullaje cívico cotidiano de la <strong>Guardia Civil</strong> y la intervención táctica de élite de los <strong>Pretorianos</strong>.
+            </p>
             
-            <div style="position: relative; margin: 30px 0; border: 1px solid var(--oro-imperial); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.15); cursor: pointer;" onclick="window.location.href='pretorianos.html'">
-                <img src="multimedia/pretorianos-propaganda.jpg" style="width:100%; display: block; filter: contrast(1.05) brightness(1.05);">
-                <div style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(8, 28, 46, 0.95), transparent); padding: 40px 20px 20px; text-align: left;">
-                    <p style="color: var(--oro-imperial); font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 2px;">Voluntas pro Pace</p>
-                    <p style="color: #fff; font-size: 0.9rem; max-width: 600px;">Nuestros Pretorianos entregan su voluntad para que tú puedas disfrutar de la paz. Equipados con Armadura Leviatán y el Pulso de Resonancia Bio-Digital, ellos son la primera y última línea de defensa contra el caos.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; text-align: left; margin-bottom: 40px;">
+                <!-- Tarjeta 1: LA GUARDIA CIVIL (FUERZAS REGULARES) -->
+                <div class="imperial-tilt-card" data-tilt data-tilt-max="8" data-tilt-speed="400" style="background: #ffffff; border: 1px solid #10b981; box-shadow: 0 15px 35px rgba(8,28,46,0.08); overflow: hidden; cursor: pointer; display: flex; flex-direction: column;" onclick="window.location.href='guardia-civil.html'">
+                    <div style="position: relative; height: 260px; overflow: hidden;">
+                        <img src="multimedia/guardia_civil_patrulla.jpg" alt="La Guardia Civil de Humania" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;">
+                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(16, 185, 129, 0.9); color: #fff; padding: 4px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Fuerzas Regulares</span>
+                    </div>
+                    <div style="padding: 25px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--azul-vance); font-size: 1.3rem; margin-bottom: 8px;">LA GUARDIA CIVIL</h3>
+                            <p style="color: #059669; font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">Ordo et Fidelitas Civica &bull; Exoesqueletos HGS-74</p>
+                            <p style="color: var(--texto-secundario); font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;">
+                                Patrullaje urbano continuo, control de masas, orden metropolitano y asistencia ciudadana. Equipados con exoesqueletos tácticos motorizados para turnos ininterrumpidos y fuerza aumentada sin fatiga.
+                            </p>
+                        </div>
+                        <span class="card-action-badge" style="color: #059669; border-color: #059669;">Ver Ficha de la Guardia Civil →</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: LOS PRETORIANOS (FUERZAS ESPECIALES) -->
+                <div class="imperial-tilt-card" data-tilt data-tilt-max="8" data-tilt-speed="400" style="background: #ffffff; border: 1px solid var(--oro-imperial); box-shadow: 0 15px 35px rgba(8,28,46,0.08); overflow: hidden; cursor: pointer; display: flex; flex-direction: column;" onclick="window.location.href='pretorianos.html'">
+                    <div style="position: relative; height: 260px; overflow: hidden;">
+                        <img src="multimedia/pretorianos-propaganda.jpg" alt="Los Pretorianos de Humania" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s;">
+                        <span style="position: absolute; top: 15px; left: 15px; background: rgba(8, 28, 46, 0.9); color: var(--oro-imperial); border: 1px solid var(--oro-imperial); padding: 4px 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">Fuerzas Especiales</span>
+                    </div>
+                    <div style="padding: 25px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3 style="color: var(--azul-vance); font-size: 1.3rem; margin-bottom: 8px;">LOS PRETORIANOS</h3>
+                            <p style="color: var(--oro-imperial); font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; text-transform: uppercase;">Voluntas Pro Pace &bull; Armadura Leviatán</p>
+                            <p style="color: var(--texto-secundario); font-size: 0.88rem; line-height: 1.6; margin-bottom: 15px;">
+                                La Muralla Blanca y los Ángeles de Marfil. Despliegue de choque para neutralizar amenazas mayores e incursiones rebeldes con Lanza de Resonancia Bio-Digital y supresión neuro-sintética total.
+                            </p>
+                        </div>
+                        <span class="card-action-badge">Ver Protocolos Pretorianos →</span>
+                    </div>
                 </div>
             </div>
             
-            <p style="color: var(--azul-vance); font-size: 1.2rem; font-weight: 600; font-family: 'Cinzel', serif; margin-top: 50px; letter-spacing: 1px;">"Estar vigilado es estar a salvo, porque fuera de la red de Humania, nadie vendrá a salvarte."</p>
+            <p style="color: var(--azul-vance); font-size: 1.15rem; font-weight: 600; font-family: 'Cinzel', serif; margin-top: 40px; letter-spacing: 1px;">"Estar vigilado es estar a salvo, porque fuera de la red de Humania, nadie vendrá a salvarte."</p>
             
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
-                <button class="btn-humania" onclick="window.location.href='pretorianos.html'">PROTOCOLOS PRETORIANOS</button>
+                <button class="btn-humania" style="border-color: #10b981; color: #065f46;" onclick="window.location.href='guardia-civil.html'">GUARDIA CIVIL</button>
+                <button class="btn-humania" onclick="window.location.href='pretorianos.html'">PRETORIANOS</button>
                 <button class="btn-humania" style="background: var(--azul-vance); color: var(--oro-imperial);" onclick="window.location.href='https://www.proiect.io'">ÚNETE A LA SINCRONÍA</button>
             </div>
         </div>
