@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
 
             <div class="chat-body" id="chat-log">
-                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía interactiva y glosario institucional en Humania Global Systems. Pregúntame sobre cualquier término, protocolo, personal del imperio o tecnología (CNB-3, APN, SPN, Zero-Time, Vance, Valerius). ¡Escríbeme o elige una opción! ¡Ding-Pum!</div>
+                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía interactiva y glosario institucional en Humania Global Systems. Pregúntame sobre cualquier término, protocolo, personal del imperio o tecnología (CNB-3, Red A.N.I.M.A., SPN, Zero-Time, Vance, Valerius). ¡Escríbeme o elige una opción! ¡Ding-Pum!</div>
             </div>
 
             <div class="chat-options" id="mite-options-bar">
@@ -228,54 +228,66 @@ document.addEventListener("DOMContentLoaded", function() {
     // --- CEREBRO CONVERSACIONAL NLU & GLOSARIO ENCICLOPÉDICO INSTITUCIONAL ---
     function procesarIntencion(rawText) {
         const txt = normalizeText(rawText);
+        // Búsqueda por palabra completa: una clave corta ("ia", "fe", "sal", "red") solo coincide como palabra entera;
+        // una clave larga coincide al inicio de palabra ("pretoriano" encuentra "pretorianos").
+        // Antes se buscaba como fragmento y "cornelia" o "arcadia" activaban la clave "ia".
+        const palabras = ' ' + normalizeText(rawText.replace(/\./g, '')).replace(/\s+/g, ' ') + ' ';
+        const tiene = (clave) => {
+            const k = normalizeText(clave.replace(/\./g, '')).replace(/\s+/g, ' ');
+            if (!k) return false;
+            if (k.length <= 4) {
+                return new RegExp(' ' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\d* ').test(palabras);
+            }
+            return palabras.includes(' ' + k);
+        };
 
-        // 1. RED A.N.I.M.A. / APN / SATÉLITES / FIBRA / LATENCIA 0.8MS
-        if (txt.includes('anima') || txt.includes('apn') || txt.includes('red') || 
-            txt.includes('satelite') || txt.includes('latencia') || txt.includes('cobertura')) {
+        // 1. RED A.N.I.M.A. / SATÉLITES / FIBRA / LATENCIA 0.8MS
+        if (tiene('anima') || tiene('red') || 
+            tiene('satelite') || tiene('latencia') || tiene('cobertura')) {
             return {
-                text: "📡 <b>Red A.N.I.M.A. / APN (Advanced Neural Integration & Monitoring Array):</b> Nuestra infraestructura global de satélites de baja órbita y nodos subterráneos de fibra óptica. Brinda posicionamiento de 1 cm de precisión y enlace neuronal continuo con <b>0.8 ms</b> de latencia fija, sincronizando cada chip con los servicios de salud y seguridad las 24 horas."
+                text: "📡 <b>Red A.N.I.M.A. (Arquitectura Neural de Integración y Monitoreo Avanzado):</b> Nuestra infraestructura global de satélites de baja órbita y nodos subterráneos de fibra óptica. Brinda posicionamiento de 1 cm de precisión y enlace neuronal continuo con <b>0.8 ms</b> de latencia fija, sincronizando cada chip con los servicios de salud y seguridad las 24 horas."
             };
         }
 
         // 2. SISTEMA DE PAGO NEURONAL (SPN)
-        if (txt.includes('spn') || txt.includes('pago neuronal') || txt.includes('sistema de pago') || txt.includes('billetera')) {
+        if (tiene('spn') || tiene('pago neuronal') || tiene('sistema de pago') || tiene('billetera')) {
             return {
                 text: "💳 <b>Sistema de Pago Neuronal (S.P.N.):</b> Estándar financiero que convierte el cuerpo en billetera digital mediante validación biométrica en tiempo real a través del chip CNB-3. Simplificó la economía eliminando el dinero físico y agilizando cada transacción de Fragmentos de Éter (FE)."
             };
         }
 
         // 3. PROTOCOLO ZERO-TIME / CONTRAMEDIDA
-        if (txt.includes('zero time') || txt.includes('zerotime') || txt.includes('tiempo cero') || txt.includes('protocolo zero')) {
+        if (tiene('zero time') || tiene('zerotime') || tiene('tiempo cero') || tiene('protocolo zero')) {
             return {
                 text: "⏱️ <b>Protocolo Zero-Time:</b> Una avanzada medida de seguridad institucional que modula la percepción temporal en un perímetro determinado a través de los chips CNB. Diseñado para neutralizar anomalías de hiper-aceleración cognitiva y restablecer el balance en la zona de manera inmediata."
             };
         }
 
         // 4. HIPERLAPSUS / 0.8 MS / TÉCNICA COGNITIVA
-        if (txt.includes('hiperlapsus') || txt.includes('0.8 ms') || txt.includes('0.8ms') || txt.includes('brecha')) {
+        if (tiene('hiperlapsus') || tiene('0.8 ms') || tiene('0.8ms') || tiene('brecha')) {
             return {
                 text: "⚡ <b>Hiperlapsus:</b> Fenómeno neuro-cognitivo donde la percepción del sujeto procesa la información en la brecha sináptica de 0.8 milisegundos. Para los sistemas de seguridad de Humania, cualquier intento no regulado de aceleración es catalogado para seguimiento preventivo."
             };
         }
 
         // 5. PUNTUACIÓN DE ANOMALÍA
-        if (txt.includes('puntuacion de anomalia') || txt.includes('anomalia') || txt.includes('puntuacion') || txt.includes('indice')) {
+        if (tiene('puntuacion de anomalia') || tiene('anomalia') || tiene('puntuacion') || tiene('indice')) {
             return {
                 text: "📊 <b>Puntuación de Anomalía:</b> Parámetro algorítmico que evalúa la estabilidad emocional y coherencia del usuario en la red. Si el índice registra fluctuaciones excesivas o sobrecargas críticas, el sistema activa protocolos de soporte para preservar la calma comunitaria."
             };
         }
 
         // 6. RECALIBRACIÓN / PROTOCOLO HW-SEC-RECAL-001 / BOZAL DIGITAL
-        if (txt.includes('recalibracion') || txt.includes('hw-sec-recal') || txt.includes('recalibrar') || txt.includes('bozal')) {
+        if (tiene('recalibracion') || tiene('hw-sec-recal') || tiene('recalibrar') || tiene('bozal')) {
             return {
                 text: "⚡ <b>Protocolo de Recalibración (HW-SEC-RECAL-001):</b> Procedimiento especializado coordinado por la Dirección de Seguridad. Aplica una optimización sináptica en la corteza prefrontal para disolver patrones de estrés severo o desobediencia, restituyendo la paz procedural con una puntuación de anomalía óptima de 0.00."
             };
         }
 
         // 7. CHIP CNB-1, CNB-2, CNB-3 'OMNI' / HISTORIA DEL CHIP
-        if (txt.includes('cnb') || txt.includes('cnb 1') || txt.includes('cnb 2') || txt.includes('cnb 3') || 
-            txt.includes('cnb3') || txt.includes('chip') || txt.includes('implante') || txt.includes('nuca') || 
-            txt.includes('grafeno') || txt.includes('extraer') || txt.includes('quitar')) {
+        if (tiene('cnb') || tiene('cnb 1') || tiene('cnb 2') || tiene('cnb 3') || 
+            tiene('cnb3') || tiene('chip') || tiene('implante') || tiene('nuca') || 
+            tiene('grafeno') || tiene('extraer') || tiene('quitar')) {
             return {
                 text: "🧠 <b>Evolución del Chip CNB:</b><br>" +
                       "• <b>CNB-1:</b> El implante pionero de 1 cm que devolvió la movilidad a personas con parálisis.<br>" +
@@ -286,8 +298,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // 8. SOLARIS / SOLARIS KIDS / VELVET / CICLO DE RECARGA
-        if (txt.includes('solaris') || txt.includes('velvet') || txt.includes('barra') || 
-            txt.includes('nutricion') || txt.includes('kids') || txt.includes('diurna') || txt.includes('nocturna')) {
+        if (tiene('solaris') || tiene('velvet') || tiene('barra') || 
+            tiene('nutricion') || tiene('kids') || tiene('diurna') || tiene('nocturna')) {
             return {
                 text: "⚡ <b>Ciclo de Nutrición & Sincronía Vital:</b><br>" +
                       "• <b>Barra Solaris (Fase Diurna):</b> Nutrición energizante formulada para silenciar el cansancio y optimizar la conductividad del organismo.<br>" +
@@ -297,160 +309,160 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // 9. FRAGMENTOS DE ÉTER (FE) / SOBREGIRO DE VIDA / ECONOMÍA
-        if (txt.includes('fe') || txt.includes('eter') || txt.includes('moneda') || 
-            txt.includes('dinero') || txt.includes('sueldo') || txt.includes('salario') || 
-            txt.includes('sobregiro') || txt.includes('costo')) {
+        if (tiene('fe') || tiene('eter') || tiene('moneda') || 
+            tiene('dinero') || tiene('sueldo') || tiene('salario') || 
+            tiene('sobregiro') || tiene('costo')) {
             return {
                 text: "💎 <b>Economía del Éter (FE):</b> La moneda digital oficial del planeta. Un ciudadano promedio administra sus consumos (suscripción Proiectio, nutrición Solaris, canon residencial) a través de su chip. En situaciones de alta demanda, el <i>Sobregiro de Vida</i> brinda respaldo temporal para extender la productividad sin interrupciones."
             };
         }
 
         // 10. PRETORIANOS / GUARDIA PRETORIANA / MURALLA BLANCA / URR
-        if (txt.includes('pretoriano') || txt.includes('pretorianos') || txt.includes('guardia') || 
-            txt.includes('urr') || txt.includes('muralla blanca') || txt.includes('armadura leviatan')) {
+        if (tiene('pretoriano') || tiene('pretorianos') || tiene('guardia') || 
+            tiene('urr') || tiene('muralla blanca') || tiene('armadura leviatan')) {
             return {
                 text: "⚔️ <b>Los Pretorianos (La Muralla Blanca):</b> Cuerpo de élite comandado por Valerius bajo el lema <i>'Voluntas pro Pace'</i>. Equipados con Armadura Leviatán y el Pulso de Resonancia Bio-Digital, resguardan la armonía en todos los sectores junto a las U.R.R. (Unidades de Respuesta Rápida)."
             };
         }
 
         // 11. PLAN DE SEGURIDAD PREVENTIVA / PAZ PREVENTIVA / APC
-        if (txt.includes('paz preventiva') || txt.includes('seguridad preventiva') || 
-            txt.includes('apc') || txt.includes('patrones conductuales') || txt.includes('crimen') || txt.includes('delito')) {
+        if (tiene('paz preventiva') || tiene('seguridad preventiva') || 
+            tiene('apc') || tiene('patrones conductuales') || tiene('crimen') || tiene('delito')) {
             return {
                 text: "🛡️ <b>Plan de Paz Preventiva & Algoritmo APC:</b> Monitoreo predictivo continuo que evalúa patrones en tiempo real para neutralizar conatos de desorden antes de que se produzcan. Ha permitido reducir la criminalidad en un 90%, garantizando un estándar de calma y seguridad global."
             };
         }
 
         // 12. FILTRO DE TRASCENDENCIA / GRAN SILENCIO / TEMPLOS PARA EL PROGRESO
-        if (txt.includes('trascendencia') || txt.includes('gran silencio') || txt.includes('templos') || txt.includes('espiritual')) {
+        if (tiene('trascendencia') || tiene('gran silencio') || tiene('templos') || tiene('espiritual')) {
             return {
                 text: "🏛️ <b>Templos para el Progreso & Filtro de Trascendencia:</b> Iniciativa histórica que convirtió antiguos recintos en modernas cabinas de sincronización CNB y centros de distribución Solaris. El sistema canaliza las inquietudes existenciales hacia experiencias gratificantes dentro de la red Proiectio."
             };
         }
 
         // 13. EL MITO DE LA SAL / YERMO / ZONAS GRISES / SEMILLAS ANCESTRALES
-        if (txt.includes('sal') || txt.includes('salarizacion') || txt.includes('semilla') || 
-            txt.includes('tierra') || txt.includes('agricultura') || txt.includes('yermo') || txt.includes('zona gris')) {
+        if (tiene('sal') || tiene('salarizacion') || tiene('semilla') || 
+            tiene('tierra') || tiene('agricultura') || tiene('yermo') || tiene('zona gris')) {
             return {
-                text: "🌱 <b>Nutrición Oficial vs. Zonas Grises:</b> Humania promueve la nutrición estandarizada para salvaguardar la salud ante terrenos no certificados. Aunque circulan crónicas sobre semillas ancestrales cultivadas en sectores periféricos, nuestros protocolos avalan la pureza de la ración de diseño."
+                text: "🌱 <b>Nutrición Oficial vs. Zonas de Exclusión:</b> Humania promueve la nutrición estandarizada para salvaguardar la salud ante terrenos no certificados. Aunque circulan crónicas sobre semillas ancestrales cultivadas en las Zonas de Exclusión, nuestros protocolos avalan la pureza de la ración de diseño."
             };
         }
 
-        // 14. ARCA DIGITAL / PLAN EVASIÓN
-        if (txt.includes('arca digital') || txt.includes('plan evasion') || txt.includes('asteroide') || txt.includes('arca')) {
+        // 14. PLAN EVASIÓN (CLASIFICADO)
+        if (tiene('plan evasion') || tiene('evasion')) {
             return {
-                text: "🚀 <b>El Arca Digital & Plan Evasión:</b> Proyecto clasificado de máxima envergadura tecnológica diseñado para garantizar la preservación de la conciencia humana en un entorno digital eterno ante contingencias cósmicas mayores."
+                text: "🔒 <b>Consulta restringida:</b> La información solicitada corresponde a un expediente de Nivel 7. Su consulta ha sido registrada para fines de calidad y seguridad. ¿Puedo orientarle con otro término del glosario institucional?"
             };
         }
 
         // 15. PERSONAL IMPERIAL: ELÍAS VANCE
-        if (txt.includes('vance') || txt.includes('elias') || txt.includes('arquitecto del orden') || txt.includes('director de seguridad')) {
+        if (tiene('vance') || tiene('elias') || tiene('arquitecto del orden') || tiene('director de seguridad')) {
             return {
                 text: "🏛️ <b>Elías Vance (Director de Seguridad):</b> <i>El Arquitecto del Orden</i>. Estratega supremo de la estabilidad de Humania. Con disciplina espartana y una visión fundamentada en la preservación colectiva, supervisa los protocolos de <i>Paz Preventiva</i> con temple inquebrantable."
             };
         }
 
         // 16. PERSONAL IMPERIAL: VALERIUS
-        if (txt.includes('valerius') || txt.includes('comandante') || txt.includes('rostro del orden') || txt.includes('angel de marfil')) {
+        if (tiene('valerius') || tiene('comandante') || tiene('rostro del orden') || tiene('angel de marfil')) {
             return {
-                text: "⚔️ <b>Comandante Valerius:</b> <i>El Rostro del Orden</i> y líder supremo de los Pretorianos. Célebre por combatir a rostro descubierto con su armadura blanca <b>Leviatán V.2</b> y su lanza telescópica <i>Justicia</i>, siendo el emblema vivo de la protección y nobleza institucional."
+                text: "⚔️ <b>Comandante Valerius:</b> <i>El Rostro del Orden</i> y líder supremo de los Pretorianos. Célebre por combatir a rostro descubierto con su armadura blanca <b>Leviatán</b> y su lanza telescópica <i>Justicia</i>, siendo el emblema vivo de la protección y nobleza institucional."
             };
         }
 
         // 17. PERSONAL IMPERIAL: EFESTO
-        if (txt.includes('efesto') || txt.includes('forjador') || txt.includes('ia de vance') || txt.includes('armaduras') || txt.includes('hefesto')) {
+        if (tiene('efesto') || tiene('ia de vance') || tiene('hefesto')) {
             return {
-                text: "⚡ <b>Efesto (La Inteligencia Forjadora):</b> Entidad de procesamiento táctico y soporte logístico que asiste a la Dirección de Seguridad. Diseñador maestro de las armaduras de combate institucionales (Leviatán V.2, Atlas) con sabiduría y cálculo absoluto."
+                text: "⚡ <b>Efesto:</b> Asistente táctico personal del Director de Seguridad Elías Vance. Sus especificaciones no figuran en los registros públicos de Humania."
             };
         }
 
         // 18. PERSONAL IMPERIAL: DR. ARIS THORNE
-        if (txt.includes('thorne') || txt.includes('aris') || txt.includes('dr thorne') || txt.includes('fundador')) {
+        if (tiene('thorne') || tiene('aris') || tiene('dr thorne') || tiene('fundador')) {
             return {
                 text: "🔬 <b>Dr. Aris Thorne:</b> Neurocirujano pionero y fundador de Humania Global Systems hace 47 años. Padre de la neuroconectividad que transformó la salud humana mediante el primer implante CNB."
             };
         }
 
         // 19. PERSONAL IMPERIAL: DIRECTORA CORNELIA
-        if (txt.includes('cornelia') || txt.includes('monitoreo biologico') || txt.includes('coherencia sinaptica')) {
+        if (tiene('cornelia') || tiene('monitoreo biologico') || tiene('coherencia sinaptica')) {
             return {
                 text: "📋 <b>Directora Cornelia:</b> Distinguida ejecutiva de Nivel 7 al frente del <i>Departamento de Monitoreo Biológico y Coherencia Sináptica</i>, custodiando la armonía neuroquímica en la Red A.N.I.M.A."
             };
         }
 
         // 20. PERSONAL IMPERIAL: GENERAL RUSSO
-        if (txt.includes('russo') || txt.includes('general russo') || txt.includes('coronel russo')) {
+        if (tiene('russo') || tiene('general russo') || tiene('coronel russo')) {
             return {
                 text: "🎖️ <b>General Russo:</b> Condecorada figura histórica de las Guerras de Pacificación, cuyo temple y liderazgo sentaron las bases del orden institucional actual."
             };
         }
 
         // 21. PERSONAL / LIDERAZGO GENERAL
-        if (txt.includes('personal') || txt.includes('imperio') || txt.includes('lideres') || txt.includes('jerarquia') || txt.includes('directiva')) {
+        if (tiene('personal') || tiene('imperio') || tiene('lideres') || tiene('jerarquia') || tiene('directiva')) {
             return {
                 text: "👑 <b>Cuadro de Liderazgo Institucional:</b><br>" +
                       "• <b>Dr. Aris Thorne:</b> Fundador histórico de la neuroconectividad.<br>" +
                       "• <b>Elías Vance:</b> Director de Seguridad y Arquitecto del Orden.<br>" +
                       "• <b>Comandante Valerius:</b> Rostro del Orden y líder Pretoriano.<br>" +
-                      "• <b>Efesto:</b> Inteligencia de forja y soporte táctico.<br>" +
+                      "• <b>Efesto:</b> Asistente táctico del Director de Seguridad.<br>" +
                       "• <b>Directora Cornelia:</b> Monitoreo Biológico y Coherencia Sináptica.<br>" +
                       "• <b>General Russo:</b> Veterano ilustre de la pacificación."
             };
         }
 
         // 22. ¿QUÉ ES HUMANIA?
-        if (txt.includes('que es humania') || txt.includes('historia') || txt.includes('fundacion') || txt.includes('47 anos')) {
+        if (tiene('que es humania') || tiene('historia') || tiene('fundacion') || tiene('47 anos')) {
             return {
                 text: "🏛️ <b>Humania Global Systems:</b> Nació hace 47 años bajo la visión del Dr. Aris Thorne. Hoy en día consolida el estándar mundial de bienestar, garantizando orden, nutrición y seguridad continua a través de la Red A.N.I.M.A. y la <i>Paz Preventiva</i>."
             };
         }
 
         // 23. PROIECTIO / SUBMUNDOS
-        if (txt.includes('proiectio') || txt.includes('submundo') || txt.includes('olympus') || txt.includes('arcadia') || txt.includes('coliseo')) {
+        if (tiene('proiectio') || tiene('submundo') || tiene('olympus') || tiene('arcadia') || tiene('coliseo')) {
             return {
                 text: "🌌 <b>Proiectio (proiect.io):</b> La plataforma de inmersión total creada para el esparcimiento ciudadano (Olympus V-Games, Arcadia Eterna, Coliseo Etérico). Un entorno donde la mente experimenta realidades de alta fidelidad durante el descanso."
             };
         }
 
         // 24. RESISTENCIA / ORIÓN / RIGEL / PANDORA / SICA / TEMPLARIOS
-        if (txt.includes('orion') || txt.includes('rigel') || txt.includes('pandora') || txt.includes('sica') || txt.includes('templarios')) {
+        if (tiene('orion') || tiene('rigel') || tiene('pandora') || tiene('sica') || tiene('templarios')) {
             return {
-                text: "🔍 <b>Registros Periféricos:</b> Existen menciones en los sectores externos sobre colectivos singulares (los Marmoleros de Pandora y Rigel, la disciplina Sica del Maestro Ryu, los Templarios y el Cliente #4092 con su lanza). Cada grupo aporta su particular visión al tapiz de este mundo."
+                text: "🔍 <b>Registros de las Zonas de Exclusión:</b> Existen menciones en las Zonas de Exclusión sobre colectivos singulares (los Marmoleros de Pandora y Rigel, la disciplina Sica del Maestro Ryu, los Templarios y el Usuario #4092 con su lanza). Cada grupo aporta su particular visión al tapiz de este mundo."
             };
         }
 
         // 25. MADRIGUERA / CONEJITO CONSENTIDO
-        if (txt.includes('conejito') || txt.includes('madriguera') || txt.includes('pendrive')) {
+        if (tiene('conejito') || tiene('madriguera') || tiene('pendrive')) {
             return {
                 text: "🐰 <b>Madrigueras y Espacios Alternativos:</b> Mitos urbanos sobre sectores de baja latencia o herramientas como el llamado 'Conejito Consentido' que despiertan el interés de mentes curiosas."
             };
         }
 
         // 26. DEVA / FRECUENCIAS EXTERNAS
-        if (txt.includes('deva') || txt.includes('terminal') || txt.includes('clandestin') || txt.includes('leaks')) {
+        if (tiene('deva') || tiene('terminal') || tiene('clandestin') || tiene('leaks')) {
             return {
                 text: "📡 <b>Frecuencias Externas:</b> Si buscas explorar más allá de los canales institucionales, hay quienes mencionan nombres clave y frecuencias alternas. Escribir ciertas palabras puede abrir ventanas insospechadas... pero yo cumplo con orientarte aquí en casa. ✨"
             };
         }
 
         // 27. META-LORE: ANIGAMI AGADNI / CLAUDIA / CLAN SAPIENSIA & UPROTA
-        if (txt.includes('anigami') || txt.includes('director') || txt.includes('claudia') || 
-            txt.includes('uprota') || txt.includes('sapiensia') || txt.includes('nexo') || 
-            txt.includes('pix') || txt.includes('silas') || txt.includes('hertz') || txt.includes('eter')) {
+        if (tiene('anigami') || tiene('director') || tiene('claudia') || 
+            tiene('uprota') || tiene('sapiensia') || tiene('nexo') || 
+            tiene('pix') || tiene('silas') || tiene('hertz') || tiene('eter')) {
             return {
                 text: "✨ <b>El Núcleo Creador:</b> El cosmos es ideado por el Director <b>Anigami Agadni</b> con la armonía inspiradora de <b>Claudia</b>, y ejecutado por el Clan UPROTA: <b>Nexo</b> (ingeniería), <b>Pix</b> (arte), <b>Silas</b> (lore), <b>Hertz</b> (audio) y <b>Éter</b> (difusión)."
             };
         }
 
         // 28. IDENTIDAD / IA / SILVIA / ROTOPLAS
-        if (txt.includes('ia') || txt.includes('robot') || txt.includes('bot') || txt.includes('silvia') || txt.includes('rotoplas')) {
+        if (tiene('ia') || tiene('robot') || tiene('bot') || tiene('silvia') || tiene('rotoplas')) {
             return {
                 text: "💅 ¡Por favor! No me compares con asistentes rutinarios. Soy <b>Mite</b>: la guía interactiva más carismática y brillante de Humania. ¡Con estilo propio, destello cian y respuestas para cada una de tus inquietudes! ¡Zashoom!"
             };
         }
 
         // 29. SECRETOS / CURIOSIDADES
-        if (txt.includes('secreto') || txt.includes('truco') || txt.includes('hack') || txt.includes('curiosidad') || txt.includes('vive')) {
+        if (tiene('secreto') || tiene('truco') || tiene('hack') || tiene('curiosidad') || tiene('vive')) {
             const secretos = [
                 "🤫 <b>Curiosidad del sistema:</b> Dicen que teclear palabras como <b>'VIVE'</b> o <b>'DEVA'</b> en el teclado físico activa secuencias especiales en la red... pero oficialmente, ¡aquí todo opera en perfecta calma! 😉",
                 "🤫 <b>Observación sutil:</b> Si exploras con atención cada sección de la plataforma, descubrirás detalles que conectan el mundo físico con los submundos de Proiectio.",
@@ -461,7 +473,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // RESPUESTA GENERAL INSTITUCIONAL
         const fallback = [
-            "Con gusto te oriento en nuestro glosario institucional. Puedes consultarme acerca del <b>Chip CNB-3</b>, la <b>Red A.N.I.M.A.</b>, el <b>SPN</b>, el <b>Protocolo Zero-Time</b>, el <b>Director Vance</b>, el <b>Comandante Valerius</b> o el <b>Forjador Efesto</b>. ¿Qué término deseas revisar?",
+            "Con gusto te oriento en nuestro glosario institucional. Puedes consultarme acerca del <b>Chip CNB-3</b>, la <b>Red A.N.I.M.A.</b>, el <b>SPN</b>, el <b>Protocolo Zero-Time</b>, el <b>Director Vance</b>, el <b>Comandante Valerius</b> o el asistente <b>Efesto</b>. ¿Qué término deseas revisar?",
             "Estoy a tu disposición para explicarte los conceptos clave de Humania Global Systems: la <b>Recalibración</b>, la <b>Puntuación de Anomalía</b>, la nutrición <b>Solaris</b> o el sedante <b>Velvet</b>. ¡Pregúntame directamente!",
             "Esa es una consulta interesante. En Humania trabajamos para que cada ciudadano cuente con información clara. Puedes probar con las opciones rápidas o preguntarme cualquier término del glosario. ¡Ding-Pum!"
         ];
@@ -516,7 +528,7 @@ document.addEventListener("DOMContentLoaded", function() {
         else if (tema === 'secreto') {
             const secretos = [
                 "🤫 <b>Curiosidad del sistema:</b> Dicen que quienes teclean palabras como <b>'VIVE'</b> o <b>'DEVA'</b> en su teclado descubren accesos poco convencionales... pero oficialmente, ¡aquí todo marcha en perfecta serenidad! 😉",
-                "🤫 <b>Sobre las Zonas Periféricas:</b> Existen relatos de expediciones que afirman haber encontrado vegetación autónoma fuera de la red... aunque el estándar institucional sigue siendo la nutrición Solaris.",
+                "🤫 <b>Sobre las Zonas de Exclusión:</b> Existen relatos de expediciones que afirman haber encontrado vegetación autónoma fuera de la red... aunque el estándar institucional sigue siendo la nutrición Solaris.",
                 "🤫 <b>Pistas de navegación:</b> Cada rincón de nuestra plataforma guarda detalles sobre el funcionamiento de los submundos. ¡Sigue explorando con atención!"
             ];
             resp = secretos[Math.floor(Math.random() * secretos.length)];
