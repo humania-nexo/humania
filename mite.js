@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (window.miteInitialized) return;
     window.miteInitialized = true;
 
-    // 1. INYECCIÓN DE ESTILOS CSS (PALETA CORPORATIVA IMPERIAL HUMANIA & MITE)
+    // 1. INYECCIÓN DE ESTILOS CSS (PALETA CORPORATIVA HUMANIA & MITE)
     const style = document.createElement('style');
     style.innerHTML = `
         #mite-widget { 
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
 
             <div class="chat-body" id="chat-log">
-                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía interactiva y glosario institucional en Humania Global Systems. Pregúntame sobre cualquier término, protocolo, personal del imperio o tecnología (CNB-3, Red A.N.I.M.A., SPN, Zero-Time, Vance, Valerius). ¡Escríbeme o elige una opción! ¡Ding-Pum!</div>
+                <div class="mite-msg">¡Zashoom! Soy Mite. 💎 Tu guía interactiva y glosario institucional en Humania Global Systems. Pregúntame sobre cualquier término, protocolo, personal de Humania o tecnología (CNB-3, Red A.N.I.M.A., SPN, Zero-Time, Vance, Valerius). ¡Escríbeme o elige una opción! ¡Ding-Pum!</div>
             </div>
 
             <div class="chat-options" id="mite-options-bar">
@@ -355,42 +355,42 @@ document.addEventListener("DOMContentLoaded", function() {
             };
         }
 
-        // 15. PERSONAL IMPERIAL: ELÍAS VANCE
+        // 15. PERSONAL DE HUMANIA: ELÍAS VANCE
         if (tiene('vance') || tiene('elias') || tiene('arquitecto del orden') || tiene('director de seguridad')) {
             return {
                 text: "🏛️ <b>Elías Vance (Director de Seguridad):</b> <i>El Arquitecto del Orden</i>. Estratega supremo de la estabilidad de Humania. Con disciplina espartana y una visión fundamentada en la preservación colectiva, supervisa los protocolos de <i>Paz Preventiva</i> con temple inquebrantable."
             };
         }
 
-        // 16. PERSONAL IMPERIAL: VALERIUS
+        // 16. PERSONAL DE HUMANIA: VALERIUS
         if (tiene('valerius') || tiene('comandante') || tiene('rostro del orden') || tiene('angel de marfil')) {
             return {
                 text: "⚔️ <b>Comandante Valerius:</b> <i>El Rostro del Orden</i> y líder supremo de los Pretorianos. Célebre por combatir a rostro descubierto con su armadura blanca <b>Leviatán</b> y su lanza telescópica <i>Justicia</i>, siendo el emblema vivo de la protección y nobleza institucional."
             };
         }
 
-        // 17. PERSONAL IMPERIAL: EFESTO
+        // 17. PERSONAL DE HUMANIA: EFESTO
         if (tiene('efesto') || tiene('ia de vance') || tiene('hefesto')) {
             return {
                 text: "⚡ <b>Efesto:</b> Asistente táctico personal del Director de Seguridad Elías Vance. Sus especificaciones no figuran en los registros públicos de Humania."
             };
         }
 
-        // 18. PERSONAL IMPERIAL: DR. ARIS THORNE
+        // 18. PERSONAL DE HUMANIA: DR. ARIS THORNE
         if (tiene('thorne') || tiene('aris') || tiene('dr thorne') || tiene('fundador')) {
             return {
                 text: "🔬 <b>Dr. Aris Thorne:</b> Neurocirujano pionero y fundador de Humania Global Systems hace 47 años. Padre de la neuroconectividad que transformó la salud humana mediante el primer implante CNB."
             };
         }
 
-        // 19. PERSONAL IMPERIAL: DIRECTORA CORNELIA
+        // 19. PERSONAL DE HUMANIA: DIRECTORA CORNELIA
         if (tiene('cornelia') || tiene('monitoreo biologico') || tiene('coherencia sinaptica')) {
             return {
                 text: "📋 <b>Directora Cornelia:</b> Distinguida ejecutiva de Nivel 7 al frente del <i>Departamento de Monitoreo Biológico y Coherencia Sináptica</i>, custodiando la armonía neuroquímica en la Red A.N.I.M.A."
             };
         }
 
-        // 20. PERSONAL IMPERIAL: GENERAL RUSSO
+        // 20. PERSONAL DE HUMANIA: GENERAL RUSSO
         if (tiene('russo') || tiene('general russo') || tiene('coronel russo')) {
             return {
                 text: "🎖️ <b>General Russo:</b> Condecorada figura histórica de las Guerras de Pacificación, cuyo temple y liderazgo sentaron las bases del orden institucional actual."
@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // 21. PERSONAL / LIDERAZGO GENERAL
-        if (tiene('personal') || tiene('imperio') || tiene('lideres') || tiene('jerarquia') || tiene('directiva')) {
+        if (tiene('personal') || tiene('humania personal') || tiene('lideres') || tiene('jerarquia') || tiene('directiva')) {
             return {
                 text: "👑 <b>Cuadro de Liderazgo Institucional:</b><br>" +
                       "• <b>Dr. Aris Thorne:</b> Fundador histórico de la neuroconectividad.<br>" +
