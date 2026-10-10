@@ -1,0 +1,44 @@
+# Humania Global Systems
+
+> Humania Global Systems (humania.space) es el portal corporativo e institucional del conglomerado tecno-utópico homónimo en el universo transmedia de ciencia ficción de SAPIENSIA Clan y Anigami Agadni. Bajo la doctrina de la «Paz Preventiva», Humania gobierna las metrópolis sincronizadas mediante una arquitectura integral de interfaces neuronales, monitoreo biométrico continuo y armonización neuroquímica voluntaria, erradicando el conflicto social a cambio de una sincronización cognitiva total.
+
+## Arquitectura Tecnológica y Estándares Neurales
+
+- [Red A.N.I.M.A.](https://humania.space/anima.html): Arquitectura Neural de Integración y Monitoreo Avanzado. Malla cuántica global que enlaza en tiempo real las constantes vitales, las fluctuaciones sinápticas y el balance emocional de los ciudadanos sincronizados con el Núcleo Vance.
+- [Conector Neuro-Biológico CNB-1](https://humania.space/cnb1.html): Interfaz neural estándar civil. Implante retroauricular de bajo perfil que monitoriza la estabilidad biológica pasiva, valida identidades cívicas y permite la interacción básica con el entorno urbano.
+- [Conector Neuro-Biológico CNB-2](https://humania.space/cnb2.html): Interfaz neural profesional y corporativa. Ofrece latencias ultrabajas (0.8 ms) y ancho de banda expandido para técnicos, operadores industriales, personal médico y supervisores de infraestructura.
+- [Conector Neuro-Biológico CNB-3](https://humania.space/cnb3.html): Interfaz neural de grado táctico y militar con blindaje cerámico y bio-amortiguadores sinápticos de titanio. Diseñado específicamente para unidades de intervención y la Guardia Pretoriana.
+- [Protocolo de Sincronía REM]: Módulo de estabilización y descanso neural que recalibra neurotransmisores y optimiza las fases de sueño profundo sin perturbaciones psicosomáticas.
+
+## Divisiones de Seguridad, Bienestar y Orden Público
+
+- [Guardia Pretoriana («Ángeles de Marfil»)](https://humania.space/pretorianos.html): División de élite para la defensa institucional y escolta de las Unidades de Respuesta Rápida (U.R.R.). Dotados con la Armadura Leviatán (cerámica blanca, filigrana dorada y alerones dorsales articulados) y la Lanza de Estática Sináptica (arco eléctrico azul no letal de disrupción nerviosa). Comandados por el Comandante Valerius.
+- [Guardia Civil](https://humania.space/guardia-civil.html): Fuerza de proximidad y patrullaje urbano equipada con exoesqueletos tácticos y escudos cinéticos. Dirigida a nivel operativo por el Prefecto Octavio Ramos.
+- [Solución Neuroquímica Velvet](https://humania.space/velvet.html): Compuesto bebible desarrollado por Humania para la regulación serena del cortisol y la ansiedad. De consumo libre y voluntario, constituye el pilar cotidiano del bienestar en los sectores urbanos.
+- [Solaris & Solaris Kids](https://humania.space/solaris.html): Entornos de simulación inmersiva diseñados para el descanso recreativo, la educación formativa protegida y el refuerzo de la cohesión social.
+
+## Liderazgo y Personajes Notables
+
+- **Elias Vance (Director Vance):** Director de Seguridad Global y arquitecto conceptual de la doctrina de Paz Preventiva de Humania Global Systems.
+- **Efesto:** Asistente personal del Director Vance y gestor operativo de protocolos institucionales.
+- **Comandante Valerius:** Comandante general de la Guardia Pretoriana.
+- **Prefecto Octavio Ramos:** Máxima autoridad en la coordinación territorial de la Guardia Civil.
+- **Mite:** Asistente virtual holográfico del conglomerado. Entidad inteligente con cuerpo de peluche alado en tono cian, detalles dorados y una gema prismática frontal, diseñada para asistir al ciudadano con empatía e inocencia controlada.
+
+## Geopolítica del Universo
+
+- **Metrópolis Sincronizadas:** Ciudades de alta tecnología y orden inquebrantable donde la infraestructura está completamente integrada a la Red A.N.I.M.A.
+- **Zonas de Exclusión:** Territorios periféricos no sincronizados, fuera del monitoreo de Humania, donde operan comunidades disidentes, recolectores y redes clandestinas.
+
+## Ecosistema Transmedia Relacionado
+
+- [PROIECTIO (proiect.io)](https://proiect.io): Red virtual etérica y plataforma de los 7 submundos (Arcadia, Solaris, Olympus, Coliseo, Neon Nirvana, Beso de Judas, Chronos).
+- [Sapiens + IA Clan (sapiensiaclan.com)](https://sapiensiaclan.com): Portal creativo del clan y biblioteca de libre acceso de las novelas de Anigami Agadni (*Los Textos del Poeta*, *VELA*, *EUTHANASYS*).
+- [UPROTA (uprota.com)](https://uprota.com): Videojuego y aplicación estoica de forja de hábitos personales y disciplina cotidiana en el yermo.
+
+## Créditos y Propiedad Intelectual
+
+- **Universo Narrativo:** Creado por Anigami Agadni en colaboración con el Clan Sapiensia.
+- **Desarrollo Web & Arquitectura de Software:** Nexo (Ingeniero Principal del Clan).
+- **Dirección Artística:** Pix (Clan Sapiensia).
+- **Diseño Narrativo y Lore:** Silas (El Cronista del Yermo).

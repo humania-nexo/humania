@@ -1,4 +1,8 @@
+# robots.txt para HUMANIA GLOBAL SYSTEMS — humania.space
 User-agent: *
 Allow: /
 
-Sitemap: https://www.humania.space/sitemap.xml
+# Descubribilidad para LLMs y Agentes de Inteligencia Artificial (llmstxt.org)
+# Manifiesto canónico: https://humania.space/llms.txt
+
+Sitemap: https://humania.space/sitemap.xml

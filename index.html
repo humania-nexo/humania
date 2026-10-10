@@ -29,20 +29,43 @@
     <meta name="twitter:description" content="Estándar global de bienestar y plataforma de resistencia del universo Proiectio.">
     <meta name="twitter:image" content="https://www.humania.space/multimedia/humania-logo.png">
 
+    <!-- Enlace a manifiesto LLMs para Agentes de IA -->
+    <link rel="alternate" type="text/markdown" href="https://humania.space/llms.txt" title="LLMs.txt">
+
     <!-- Datos Estructurados Schema.org -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Humania Global Systems",
-      "url": "https://www.humania.space",
-      "logo": "https://www.humania.space/multimedia/humania-logo.png",
-      "description": "Estándar global de bienestar y red A.N.I.M.A.",
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "SAPIENSIA Clan",
-        "url": "https://sapiensiaclan.com"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://humania.space/#organization",
+          "name": "Humania Global Systems",
+          "url": "https://humania.space",
+          "logo": "https://humania.space/multimedia/humania-logo.png",
+          "description": "Estándar global de bienestar, red A.N.I.M.A. y doctrina de Paz Preventiva en el universo transmedia de SAPIENSIA Clan.",
+          "founder": {
+            "@type": "Person",
+            "name": "Anigami Agadni"
+          },
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "SAPIENSIA Clan",
+            "url": "https://sapiensiaclan.com"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://humania.space/#website",
+          "url": "https://humania.space",
+          "name": "Humania Global Systems",
+          "description": "Portal institucional y corporativo de Humania Global Systems y la Red A.N.I.M.A.",
+          "publisher": {
+            "@id": "https://humania.space/#organization"
+          },
+          "inLanguage": "es"
+        }
+      ]
     }
     </script>
 
